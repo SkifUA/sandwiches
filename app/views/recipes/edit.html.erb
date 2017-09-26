@@ -1,0 +1,12 @@
+<h1>Editing Recipe</h1>
+
+<%= form_with(model: @recipe,
+              url: {action:"update",
+                    controller: "recipes",
+                    dish_id: @dish.id},
+              method: :put) do |form| %>
+    <%= render 'form', { form: form, recipe: @recipe }  %>
+<% end %>
+
+<%= link_to 'Show', dish_recipe_path(@dish, @recipe) %> |
+<%= link_to 'Back', dish_recipes_path(@dish) %>

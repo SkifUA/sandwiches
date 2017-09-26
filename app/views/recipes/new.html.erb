@@ -1,0 +1,10 @@
+<h1>New Recipe</h1>
+<%= form_with(model: @recipe,
+              url: {action:"create",
+                    controller: "recipes",
+                    dish_id: @dish.id},
+                    method: :post) do |form| %>
+  <%= render 'form', { form: form, recipe: @recipe }  %>
+<% end %>
+
+<%= link_to 'Back', dish_recipes_path(@dish) %>
