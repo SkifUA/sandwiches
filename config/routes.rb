@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   root 'dishes#index'
   resources :dishes
   devise_for :users
