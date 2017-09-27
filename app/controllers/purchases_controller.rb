@@ -5,7 +5,7 @@ class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
   def index
-    @purchases = Purchase.includes(:product, :user).all
+    @purchases = Purchase.activated.includes(:product, :user)
   end
 
   # GET /purchases/1
