@@ -4,8 +4,23 @@ class Purchase < ApplicationRecord
 
   attr_accessor :cost_float
 
+  before_create :deactivate_old
   before_save :to_cost
   after_initialize :to_cost_float
+
+  scope :activated, -> () { where(active: true) }
+  scope :current_product, -> (product_id, user_id) { where(product_id: product_id, user_id: user_id ) }
+  scope :deactivate, -> () { update(active: false) }
+
+  def set_left
+    old_purchase = Purchase.activated.current_product(product_id).last
+    if old_purchase
+      self.left = old_purchase.left
+      self.left_finished = old_purchase.left_finished
+    end
+  end
+
+  private
 
   def to_cost_float
     self.cost_float = (cost / 100.00).round(2) if cost.present?
@@ -13,6 +28,10 @@ class Purchase < ApplicationRecord
 
   def to_cost
     self.cost = (cost_float.to_f * 100).round
+  end
+
+  def deactivate_old
+    Purchase.activated.current_product(product_id, user_id).deactivate
   end
 
 
