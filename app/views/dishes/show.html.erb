@@ -15,5 +15,6 @@
   <%= @dish.prise %>
 </p>
 
-<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Edit', edit_dish_path(@dish) %>
+<%= link_to 'Edit recipe', dish_recipes_path(@dish) %>|
 <%= link_to 'Back', dishes_path %>
