@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  product_id: 1
+  date_purchase: 2017-09-27
+  bought: 1
+  cost: 1
+  left: 1
+  left_finished: 1
+
+two:
+  user_id: 1
+  product_id: 1
+  date_purchase: 2017-09-27
+  bought: 1
+  cost: 1
+  left: 1
+  left_finished: 1

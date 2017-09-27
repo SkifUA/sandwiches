@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Purchases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Product</th>
+      <th>Date purchase</th>
+      <th>Bought</th>
+      <th>Cost</th>
+      <th>Left</th>
+      <th>Left finished</th>
+      <th>Description</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.user.name %></td>
+        <td><%= purchase.product.name %></td>
+        <td><%= purchase.date_purchase %></td>
+        <td><%= purchase.bought %></td>
+        <td><%= purchase.cost %></td>
+        <td><%= purchase.left %></td>
+        <td><%= purchase.left_finished %></td>
+        <td><%= purchase.description %></td>
+        <td><%= link_to 'Show', purchase %></td>
+        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase', new_purchase_path %>
