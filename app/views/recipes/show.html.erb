@@ -1,18 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Dish:</strong>
-  <%= @recipe.dish_id %>
-</p>
+<h1>Product for <span><%= @dish.name %></span></h1>
 
 <p>
   <strong>Product:</strong>
-  <%= @recipe.product_id %>
+  <%= @recipe.product.name %>
 </p>
 
 <p>
   <strong>Quantity:</strong>
-  <%= @recipe.quantity %>
+  <%= @recipe.quantity %> <%= @recipe.product.unit %>
 </p>
 
 <%= link_to 'Edit', edit_dish_recipe_path(@dish, @recipe) %> |

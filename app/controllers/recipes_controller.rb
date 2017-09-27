@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:product).all
   end
 
   # GET /recipes/1
@@ -16,10 +16,12 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @products = Product.all
   end
 
   # GET /recipes/1/edit
   def edit
+    @products = Product.all
   end
 
   # POST /recipes
@@ -32,7 +34,7 @@ class RecipesController < ApplicationController
         format.html { redirect_to dish_recipes_url(@dish, @recipe), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
-        format.html { render :new }
+        format.html { redirect_to new_dish_recipe_url(@dish), alert: 'Error added new product to recipe' }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
@@ -72,7 +74,7 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:dish_id, :product_id, :quantity)
     end
-  ``
+
     def get_dish
       @dish = Dish.find(params.fetch(:dish_id))
     end

@@ -3,4 +3,12 @@ class Product < ApplicationRecord
   enum measuring: { weight: 1, piece: 2 }
 
   validates_presence_of :name, :measuring
+
+  def unit
+    if measuring == 'weight'
+      I18n.t('products.measuring.weight')
+    else
+      I18n.t('products.measuring.piece')
+    end
+  end
 end
