@@ -38,5 +38,7 @@
 <br>
 
 <% if can?(:create, Recipe)  %>
-  <%= link_to t('recipes.view.add'), new_dish_recipe_path(@dish) %>
+  <%= link_to t('recipes.view.add'), new_dish_recipe_path(@dish) %> |
 <% end %>
+
+<%= link_to 'Back', dish_path(@dish) %>
