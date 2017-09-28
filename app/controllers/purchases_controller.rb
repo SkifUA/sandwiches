@@ -1,4 +1,6 @@
 class PurchasesController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
   before_action :get_products, only: [:new, :edit]
 
