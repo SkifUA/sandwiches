@@ -12,8 +12,9 @@
 
 <p>
   <strong>User:</strong>
-  <%= @place.user.name || @place.user.email%>
+  <%= @place.user.name %>
 </p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
+<% if can?(:update, @place)  %>
+  <%= link_to 'Edit', edit_place_path(@place) %> |
+<% end %>
 <%= link_to 'Back', places_path %>

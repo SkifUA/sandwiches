@@ -15,7 +15,14 @@ en:
       unique: 'This product exist'
   places:
     name: 'Places'
+    view:
+      title_edit: 'Editing Place'
+      title_new: 'New Place'
   purchases:
     name: 'Purchases'
   dishes:
     name: 'Dishes'
+    view:
+      title_edit: 'Editing Dish'
+      title_new: 'New Dish'
+'
