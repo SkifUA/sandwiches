@@ -6,4 +6,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates_presence_of :name
+
+  def first_name
+    name.split.ferst
+  end
+
+  def last_name
+    name.split.last
+  end
+
 end
