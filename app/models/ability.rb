@@ -33,6 +33,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.cook?
+      can :read, Period
       can :read, Dish
       can :read, Product
       can :read, Place

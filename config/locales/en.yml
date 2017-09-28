@@ -4,6 +4,8 @@ en:
   sign_up: 'Sign Up'
   login: 'Login'
   logout: 'Logout'
+  confirm:
+    delete: 'A you sure you want to delete this?'
   devise:
     omniauth_callbacks:
       success: 'You authenticated by Google'
@@ -38,3 +40,9 @@ en:
     view:
       title_edit: 'Editing Dish'
       title_new: 'New Dish'
+  periods:
+      name: 'Periods'
+      view:
+        title_edit: 'Editing Period'
+        title_new: 'New Period'
+        link_report: 'Report'

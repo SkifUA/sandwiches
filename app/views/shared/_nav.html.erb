@@ -11,5 +11,8 @@
   <% if can?(:show, Purchase) %>
     <div><%= link_to t('purchases.name'), purchases_path %></div>
   <% end %>
+  <% if can?(:show, Period) %>
+      <div><%= link_to t('periods.name'), periods_path %></div>
+  <% end %>
   <%= login_helper %>
 </div>

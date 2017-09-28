@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @period.start_date %>
+</p>
+
+<p>
+  <strong>Finish date:</strong>
+  <%= @period.finish_date %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @period.days %>
+</p>
+
+<% if can?(:update, Period) %>
+  <%= link_to 'Edit', edit_period_path(@period) %> |
+<% end %>
+<%= link_to 'Back', periods_path %>

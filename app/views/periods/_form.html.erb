@@ -1,0 +1,32 @@
+<%= form_with(model: period, local: true) do |form| %>
+  <% if period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(period.errors.count, "error") %> prohibited this period from being saved:</h2>
+
+      <ul>
+      <% period.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :period_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finish_date %>
+    <%= form.date_select :finish_date, id: :period_finish_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :days %>
+    <%= form.number_field :days, id: :period_days %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
