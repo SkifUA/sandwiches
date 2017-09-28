@@ -16,6 +16,10 @@ en:
     name: 'Recipes'
     validates:
       unique: 'This product exist'
+    view:
+      title_edit: 'Editing Product for '
+      title_new: 'New Product for '
+      add: 'Add Product'
   places:
     name: 'Places'
     view:
@@ -31,4 +35,3 @@ en:
     view:
       title_edit: 'Editing Dish'
       title_new: 'New Dish'
-'

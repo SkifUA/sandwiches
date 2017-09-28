@@ -11,5 +11,7 @@
   <%= @recipe.quantity %> <%= @recipe.product.unit %>
 </p>
 
-<%= link_to 'Edit', edit_dish_recipe_path(@dish, @recipe) %> |
+<% if can?(:update, Recipe)  %>
+  <%= link_to 'Edit', edit_dish_recipe_path(@dish, @recipe) %> |
+<% end %>
 <%= link_to 'Back', dish_recipes_path(@dish) %>

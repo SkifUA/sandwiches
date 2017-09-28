@@ -17,11 +17,18 @@
         <td><%= recipe.product.name %></td>
         <td><%= recipe.quantity %> <%= recipe.product.unit %></td>
         <td><%= link_to 'Show', dish_recipe_path(@dish, recipe) %></td>
-        <td><%= link_to 'Edit', edit_dish_recipe_path(@dish, recipe) %></td>
-        <td><%= link_to 'Destroy',
-                        dish_recipe_path(@dish, recipe),
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %>
+        <td>
+          <% if can?(:update, recipe)  %>
+            <%= link_to 'Edit', edit_dish_recipe_path(@dish, recipe) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can?(:destroy, recipe)  %>
+            <%= link_to 'Destroy',
+                          dish_recipe_path(@dish, recipe),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -30,4 +37,6 @@
 
 <br>
 
-<%= link_to 'Add Product', new_dish_recipe_path(@dish) %>
+<% if can?(:create, Recipe)  %>
+  <%= link_to t('recipes.view.add'), new_dish_recipe_path(@dish) %>
+<% end %>

@@ -1,4 +1,4 @@
-<h1>New Product for <span><%= @dish.name %></span></h1>
+<h1><% t('recipes.view.title_new') %><span><%= @dish.name %></span></h1>
 <%= form_with(model: @recipe,
               url: {action:"create",
                     controller: "recipes",
