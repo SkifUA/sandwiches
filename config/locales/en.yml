@@ -4,6 +4,9 @@ en:
   sign_up: 'Sign Up'
   login: 'Login'
   logout: 'Logout'
+  devise:
+    omniauth_callbacks:
+      success: 'You authenticated by Google'
   products:
     name: 'Products'
     measuring:

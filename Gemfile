@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.3'
 gem 'cancancan', '~> 2.0'
+gem 'dotenv', '~> 2.2', '>= 2.2.1'
+gem 'omniauth-google-oauth2', '~> 0.5.2'
+
+ruby "2.4.0"
