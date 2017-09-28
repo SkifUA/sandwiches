@@ -19,8 +19,16 @@
         <td><%= dish.description %></td>
         <td><%= dish.prise %></td>
         <td><%= link_to 'Show', dish %></td>
-        <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
-        <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can?(:update, dish)  %>
+            <%= link_to 'Edit', edit_dish_path(dish) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can?(:update, dish)  %>
+            <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end  %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +36,6 @@
 
 <br>
 
-<%= link_to 'New Dish', new_dish_path %>
+<% if can?(:create, Dish)  %>
+  <%= link_to 'New Dish', new_dish_path %>
+<% end %>
