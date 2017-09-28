@@ -40,5 +40,7 @@
   <%= @purchase.description %>
 </p>
 
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<% if can?(:update, @purchase)  %>
+  <%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<% end %>
 <%= link_to 'Back', purchases_path %>

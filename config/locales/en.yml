@@ -23,6 +23,9 @@ en:
       title_new: 'New Place'
   purchases:
     name: 'Purchases'
+    view:
+      title_edit: 'Editing Purchase'
+      title_new: 'New Purchase'
   dishes:
     name: 'Dishes'
     view:

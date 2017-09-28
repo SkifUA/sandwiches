@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Purchases</h1>
+<h1><% t('purchases.name') %></h1>
 
 <table>
   <thead>
@@ -29,7 +29,11 @@
         <td><%= purchase.left_finished %></td>
         <td><%= purchase.description %></td>
         <td><%= link_to 'Show', purchase %></td>
-        <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+        <td>
+          <% if can?(:update, purchase)  %>
+            <%= link_to 'Edit', edit_purchase_path(purchase) %>
+          <% end %>
+        </td>
 
       </tr>
     <% end %>
@@ -37,5 +41,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Purchase', new_purchase_path %>
+<% if can?(:create, Purchase)  %>
+  <%= link_to t('purchases.view.title_new'), new_purchase_path %>
+<% end %>
