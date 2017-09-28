@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.includes(:product).all
+    @recipes = Recipe.includes(:product).by_dish(@dish.id)
   end
 
   # GET /recipes/1
