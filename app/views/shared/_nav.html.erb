@@ -1,7 +1,15 @@
 <div class="<%#= location %>">
-  <div><%= link_to "Home", root_path %></div>
-  <div><%= link_to "Product", products_path %></div>
-  <div><%= link_to "Places", places_path %></div>
-  <div><%= link_to "Purchases", purchases_path %></div>
+  <% if can?(:show, Dish) %>
+    <div><%= link_to t('home'), root_path %></div>
+  <% end %>
+  <% if can?(:show, Product) %>
+    <div><%= link_to t('products.name'), products_path %></div>
+  <% end %>
+  <% if can?(:show, Place) %>
+    <div><%= link_to t('places.name'), places_path %></div>
+  <% end %>
+  <% if can?(:show, Purchase) %>
+    <div><%= link_to t('purchases.name'), purchases_path %></div>
+  <% end %>
   <%= login_helper %>
 </div>

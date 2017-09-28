@@ -1,9 +1,21 @@
 en:
+  home: 'Home'
   hello: "Hello world"
+  sign_up: 'Sign Up'
+  login: 'Login'
+  logout: 'Logout'
   products:
+    name: 'Products'
     measuring:
       weight: 'grammes'
       piece: 'pieces'
   recipes:
+    name: 'Recipes'
     validates:
       unique: 'This product exist'
+  places:
+    name: 'Places'
+  purchases:
+    name: 'Purchases'
+  dishes:
+    name: 'Dishes'
