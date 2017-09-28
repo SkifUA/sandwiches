@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :periods
+
+  resources :periods do
+    resources :orders
+  end
   resources :purchases
   resources :places
   resources :products

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :places
   has_many :purchases
+  has_many :orders
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,6 +9,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates_presence_of :name
+
+  scope :cooks, -> () { where(cook: true) }
 
   def first_name
     name.split.ferst

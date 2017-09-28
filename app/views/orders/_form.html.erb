@@ -1,0 +1,39 @@
+<% if order.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+    <ul>
+    <% order.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form.hidden_field :period_id, id: :order_period_id, value: @period.id %>
+
+<div class="field">
+  <%= form.select :dish_id do %>
+    <% @dishes.each do |dish| %>
+      <%= content_tag(:option, dish.name, id: :order_dish_id, value: dish.id) %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="field">
+  <%= form.select :user_id do %>
+    <% @users.each do |user| %>
+      <%= content_tag(:option, user.name, id: :order_user_id, value: user.id) %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="field">
+  <%= form.label :quantity %>
+  <%= form.number_field :quantity, id: :order_quantity %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+

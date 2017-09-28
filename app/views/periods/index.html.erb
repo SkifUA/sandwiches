@@ -25,9 +25,7 @@
           <% end %>
         </td>
         <td>
-          <% if can?(:destroy, period) %>
-            <%= link_to 'Destroy', period, method: :delete, data: { confirm: t('confirm.delete') } %>
-          <% end %>
+          <%= link_to t('periods.name'), period_orders_path(period) %>
         </td>
       </tr>
     <% end %>

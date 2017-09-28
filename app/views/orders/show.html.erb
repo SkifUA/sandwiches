@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @order.period.start_date %> - <%= @order.period.finish_date %>
+</p>
+
+<p>
+  <strong>Cook:</strong>
+  <%= @order.user.name %>
+</p>
+
+<p>
+  <strong>Dish:</strong>
+  <%= @order.dish.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order.quantity %>
+</p>
+
+<% if can?(:update, @order) %>
+  <%= link_to 'Edit', edit_period_order_path(@period, @order) %> |
+<% end %>
+<%= link_to 'Back', period_orders_path(@period) %>

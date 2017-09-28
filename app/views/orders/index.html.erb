@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('orders.name') %> </h1>
+<h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dish</th>
+      <th>User</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.dish.name %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.quantity %></td>
+        <td><%= link_to 'Show', period_order_path(@period, order) %></td>
+        <td>
+          <% if can?(:update, order) %>
+            <%= link_to 'Edit', edit_period_order_path(@period, order) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can?(:destroy, order) %>
+            <%= link_to 'Destroy', period_order_path(@period, order), method: :delete, data: { confirm: t('confirm.destroy') } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if can?(:create, Order) %>
+  <%= link_to 'New Order', new_period_order_path(@period) %>
+<% end %>

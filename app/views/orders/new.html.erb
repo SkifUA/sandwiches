@@ -1,0 +1,11 @@
+<h1><%= t('orders.view.title_new') %></h1>
+<h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
+<%= form_with(model: @order,
+              url: {action:"create",
+                    controller: "orders",
+                    dish_id: @period.id},
+              method: :post) do |form| %>
+  <%= render 'form', { order: @order, form: form } %>
+<% end %>
+
+<%= link_to 'Back', period_orders_path(@period) %>
