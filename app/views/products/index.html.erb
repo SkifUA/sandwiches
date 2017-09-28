@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1><% t('products.name') %>></h1>
 
 <table>
   <thead>
@@ -21,13 +21,22 @@
         <td><%= product.percent_of_recycling %></td>
         <td><%= product.measuring %></td>
         <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can?(:update, product)  %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+          <% end %>
+        </td>
+        <td>
+          <% if can?(:destroy, product)  %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Product', new_product_path %>
+<% if can?(:create, Product)  %>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>

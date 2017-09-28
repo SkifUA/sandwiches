@@ -9,6 +9,9 @@ en:
     measuring:
       weight: 'grammes'
       piece: 'pieces'
+    view:
+      title_edit: 'Editing Product'
+      title_new: 'New Product'
   recipes:
     name: 'Recipes'
     validates:
