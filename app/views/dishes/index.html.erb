@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Dishes</h1>
+<h1><% t('dishes.name') %></h1>
 
 <table>
   <thead>
@@ -25,7 +25,7 @@
           <% end %>
         </td>
         <td>
-          <% if can?(:update, dish)  %>
+          <% if can?(:destroy, dish)  %>
             <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end  %>
         </td>
