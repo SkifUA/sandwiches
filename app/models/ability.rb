@@ -37,7 +37,7 @@ class Ability
       can :read, Dish
       can :read, Product
       can :read, Place
-      can :read, Recipe
+      can :read, Ingredient
       can :read, Order, user_id: user.id
       can :manage, Purchase, user_id: user.id
     else

@@ -17,8 +17,8 @@ en:
     view:
       title_edit: 'Editing Product'
       title_new: 'New Product'
-  recipes:
-    name: 'Recipes'
+  ingredient:
+    name: 'Ingredient'
     validates:
       unique: 'This product exist'
     view:

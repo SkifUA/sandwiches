@@ -18,7 +18,7 @@
 <% if can?(:create, @dish)  %>
   <%= link_to 'Edit', edit_dish_path(@dish) %>
 <% end %>
-<% if can?(:create, Recipe)  %>
+<% if can?(:create, Ingredient)  %>
   <%= link_to 'Edit recipe', dish_ingredients_path(@dish) %>|
 <% end %>
 <%= link_to 'Back', dishes_path %>
