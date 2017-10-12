@@ -12,20 +12,26 @@
 
 <%= form.hidden_field :period_id, id: :order_period_id, value: @period.id %>
 
-<div class="field">
-  <%= form.select :dish_id do %>
-    <% @dishes.each do |dish| %>
-      <%= content_tag(:option, dish.name, id: :order_dish_id, value: dish.id) %>
-    <% end %>
-  <% end %>
+<div class="form-group">
+  <%= form.label 'Dish' %>
+  <%= form.collection_select(:dish_id, Dish.all, :id, :name,
+                             {
+                                 include_blank: true
+                             },
+                             class: 'form-control'
+      )
+  %>
 </div>
 
-<div class="field">
-  <%= form.select :user_id do %>
-    <% @users.each do |user| %>
-      <%= content_tag(:option, user.name, id: :order_user_id, value: user.id) %>
-    <% end %>
-  <% end %>
+<div class="form-group">
+  <%= form.label 'Cook' %>
+  <%= form.collection_select(:user_id, User.cooks, :id, :name,
+                             {
+                                 include_blank: true
+                             },
+                             class: 'form-control'
+      )
+  %>
 </div>
 
 <div class="field">
