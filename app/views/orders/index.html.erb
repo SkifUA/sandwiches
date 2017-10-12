@@ -26,8 +26,8 @@
           <% end %>
         </td>
         <td>
-          <% if can?(:destroy, order) %>
-            <%= link_to 'Destroy', period_order_path(@period, order), method: :delete, data: { confirm: t('confirm.destroy') } %>
+          <% if can?(:show, order) %>
+            <%= link_to 'Products for cook', period_for_cook_path(@period, order.user_id) %>
           <% end %>
         </td>
       </tr>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :periods do
+    get '/for-cook/:user_id', to: 'orders#for_cook', as: 'for_cook'
     resources :orders
   end
   resources :purchases
