@@ -12,12 +12,15 @@
 
 <%= form.hidden_field :dish_id, id: :recipe_dish_id, value: @dish.id %>
 
-<div class="field">
-  <%= form.select :product_id do %>
-    <% @products.each do |product| %>
-      <%= content_tag(:option, "#{product.name}, #{product.unit}", value: product.id) %>
-    <% end %>
-  <% end %>
+<div class="form-group">
+  <%= form.label :product_id %>
+  <%= form.collection_select(:product_id, @products, :id, :name_with_unit,
+                             {
+                                 include_blank: true
+                             },
+                             class: 'form-control'
+      )
+  %>
 </div>
 
 <div class="field">
