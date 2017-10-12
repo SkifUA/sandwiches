@@ -3,11 +3,11 @@
   <h2>For Cook: <%= @user_name %></h2>
   <h3>Orders</h3>
   <% @orders.each do |order| %>
-    <div><%= order.dish.name %>: <%= order.quantity * @period.days %></div>
+      <div><%= order.dish.name %>: <%= order.quantity * @period.days %></div>
   <% end %>
   <h3>Products</h3>
   <% @products.each do |key, count| %>
-  <% product = Product.find(key) %>
+      <% product = Product.find(key) %>
       <div><%= product.name_with_unit %>: <%= count.to_i * @period.days %></div>
   <% end %>
 </div>

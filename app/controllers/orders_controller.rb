@@ -47,12 +47,6 @@ class OrdersController < ApplicationController
     redirect_to period_orders_path(@period), notice: 'Order was successfully destroyed.'
   end
 
-  def for_cook
-    @orders = Order.for_user_by_period(params.fetch(:user_id), params.fetch(:period_id))
-    @user_name = User.find(params.fetch(:user_id)).name
-    @products = Order.products_by_orders(@orders)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order

@@ -27,7 +27,7 @@
         </td>
         <td>
           <% if can?(:show, order) %>
-            <%= link_to 'Products for cook', period_for_cook_path(@period, order.user_id) %>
+            <%= link_to 'Products for cook', order_products_path(@period, order.user_id) %>
           <% end %>
         </td>
       </tr>
