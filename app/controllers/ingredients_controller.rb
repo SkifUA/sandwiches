@@ -28,7 +28,7 @@ class IngredientsController < ApplicationController
     if @ingredient.save
       redirect_to dish_ingredients_path(@dish), notice: 'Ingredient was successfully created.'
     else
-      redirect_to new_dish_ingredient_path(@dish)
+      redirect_to new_dish_ingredient_path(@dish), notice: "Ingredient didn't add"
     end
   end
 
