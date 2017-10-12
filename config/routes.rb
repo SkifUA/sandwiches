@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :products
 
   resources :dishes do
+    resources :ingredients
     resources :recipes
   end
 

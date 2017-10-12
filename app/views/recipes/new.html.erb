@@ -1,7 +1,7 @@
 <h1><%= t('recipes.view.title_new') %><span><%= @dish.name %></span></h1>
 <%= form_with(model: @recipe,
               url: {action:"create",
-                    controller: "recipes",
+                    controller: "ingredients",
                     dish_id: @dish.id},
                     method: :post) do |form| %>
   <%= render 'form', { form: form, recipe: @recipe }  %>

@@ -1,0 +1,15 @@
+<h1>Editing Ingredient for <%= @dish.name %></h1>
+
+<%= form_with(model: @ingredient,
+              url: {action:"update",
+                    controller: "ingredients",
+                    dish_id: @dish.id},
+              method: :put) do |form| %>
+
+    <%= render 'form', { form: form, ingredient: @ingredient } %>
+<% end %>
+
+
+
+<%= link_to 'Show', dish_ingredient_path(@dish, @ingredient) %> |
+<%= link_to 'Back', dish_ingredients_path %>
