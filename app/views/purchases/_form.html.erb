@@ -11,18 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :purchase_user_id %>
-  </div>
+  <%= form.hidden_field :user_id, id: :purchase_user_id, value: current_user.id %>
 
-  <div class="field">
-    <%= form.select :product_id, id: :purchase_product_id do %>
-        <% @products.each do |product| %>
-            <%= content_tag(:option, "#{product.name}, #{product.unit}", value: product.id) %>
-        <% end %>
-    <% end %>
-  </div>
+    <div class="form-group">
+      <%= form.label :product_id %>
+      <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
+                                 {
+                                     include_blank: true
+                                 },
+                                 class: 'form-control'
+          )
+      %>
+    </div>
 
   <div class="field">
     <%= form.label :date_purchase %>
