@@ -12,4 +12,8 @@ class Product < ApplicationRecord
       I18n.t('products.measuring.piece')
     end
   end
+
+  def name_with_unit
+    "#{name}, #{unit}"
+  end
 end
