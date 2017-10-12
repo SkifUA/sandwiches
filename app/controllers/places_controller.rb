@@ -2,16 +2,14 @@ class PlacesController < ApplicationController
   load_and_authorize_resource
 
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  before_action :get_users, only: [:new, :edit]
+  before_action :get_cooks, only: [:new, :edit]
 
   # GET /places
-  # GET /places.json
   def index
     @places = Place.all
   end
 
   # GET /places/1
-  # GET /places/1.json
   def show
   end
 
@@ -25,43 +23,29 @@ class PlacesController < ApplicationController
   end
 
   # POST /places
-  # POST /places.json
   def create
     @place = Place.new(place_params)
 
-    respond_to do |format|
-      if @place.save
-        format.html { redirect_to @place, notice: 'Place was successfully created.' }
-        format.json { render :show, status: :created, location: @place }
-      else
-        format.html { render :new }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.save
+     redirect_to @place, notice: 'Place was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /places/1
-  # PATCH/PUT /places/1.json
   def update
-    respond_to do |format|
-      if @place.update(place_params)
-        format.html { redirect_to @place, notice: 'Place was successfully updated.' }
-        format.json { render :show, status: :ok, location: @place }
-      else
-        format.html { render :edit }
-        format.json { render json: @place.errors, status: :unprocessable_entity }
-      end
+    if @place.update(place_params)
+      redirect_to @place, notice: 'Place was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /places/1
-  # DELETE /places/1.json
   def destroy
     @place.destroy
-    respond_to do |format|
-      format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to places_url, notice: 'Place was successfully destroyed.'
   end
 
   private
@@ -75,7 +59,7 @@ class PlacesController < ApplicationController
       params.require(:place).permit(:name, :description, :user_id)
     end
 
-    def get_users
-      @users = User.all
+    def get_cooks
+      @users = User.cooks
     end
 end

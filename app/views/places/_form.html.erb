@@ -21,12 +21,15 @@
     <%= form.text_area :description, id: :place_description %>
   </div>
 
-  <div class="field">
-    <%= form.select :user_id do %>
-        <% @users.each do |user| %>
-            <%= content_tag(:option, user.name || user.email, value: user.id) %>
-        <% end %>
-    <% end %>
+  <div class="form-group">
+    <%= form.label 'Cook' %>
+    <%= form.collection_select(:user_id, @users, :id, :name,
+                               {
+                                   include_blank: true
+                               },
+                               class: 'form-control'
+        )
+    %>
   </div>
 
   <div class="actions">
