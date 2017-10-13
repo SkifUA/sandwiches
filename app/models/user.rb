@@ -8,6 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  before_destroy :admin_protection
+
   validates_presence_of :name
 
   scope :cooks, -> () { where(cook: true) }
@@ -34,6 +36,10 @@ class User < ApplicationRecord
 
     user.save!
     user
+  end
+
+  def admin_protection
+    throw(:abort) if self.admin?
   end
 
 end

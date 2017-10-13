@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'reports/order-products/:period_id/:user_id', to: 'reports#order_products', as: 'order_products'
 
   post 'reports/send-order-products/:period_id/:user_id', to: 'reports#send_order_products', as: 'send_products'

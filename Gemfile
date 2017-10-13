@@ -58,5 +58,6 @@ gem 'cancancan', '~> 2.0'
 gem 'dotenv', '~> 2.2', '>= 2.2.1'
 gem 'omniauth-google-oauth2', '~> 0.5.2'
 gem 'google-api-client', '~> 0.15.0'
+gem 'rails_admin', '~> 1.2'
 
 ruby "2.4.0"
