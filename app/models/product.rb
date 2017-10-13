@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :dishes, through: :ingredients
   has_many :purchases
 
+  before_create :default_percent_of_recycling
   enum measuring: { weight: 1, piece: 2 }
 
   validates_presence_of :name, :measuring
@@ -17,5 +18,9 @@ class Product < ApplicationRecord
 
   def name_with_unit
     "#{name}, #{unit}"
+  end
+
+  def default_percent_of_recycling
+    self.percent_of_recycling = percent_of_recycling || 0
   end
 end
