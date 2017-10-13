@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
     # google_script_service
     # @google_scripts.script
 
-    @google_sheets.update(@products)
+    @google_sheets.update(@products, @period)
     redirect_to reports_success_path
   end
 

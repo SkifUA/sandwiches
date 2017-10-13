@@ -22,8 +22,8 @@ class GoogleServiceSheets
     puts response.to_json
   end
 
-  def update(objects)
-    rows = []
+  def update(objects, period)
+    rows = [["#{period.start_date} - #{period.finish_date}", "#{period.days} days"]]
     objects.each { |object| rows << row_for_sheets(object) }
 
     range = "#{@name_page}!A2:B#{rows.count + 1}"
