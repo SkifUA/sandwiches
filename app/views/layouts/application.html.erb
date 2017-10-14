@@ -12,20 +12,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script>
-      $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
-          autoPlay:true,
-          items : 4,
-          itemsDesktop : [640,5],
-          itemsDesktopSmall : [414,4]
-
-        });
-
-      });
-    </script>
 
     <%= csrf_meta_tags %>
 
@@ -35,9 +21,11 @@
     <div class="banner">
       <%= render 'shared/nav_application' %>
       <%= render 'shared/banner' if current_page? root_path %>
-      <div class="about-heading">
-        <h2>Menu</h2>
-      </div>
+      <% unless current_page? root_path %>
+        <div class="about-heading">
+          <h2><%= yield(:title) %></h2>
+        </div>
+      <% end %>
     </div>
     <!--<p class="notice"><%#= notice %></p>-->
     <!--<p class="alert"><%#= alert %></p>-->

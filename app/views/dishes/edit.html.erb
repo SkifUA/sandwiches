@@ -1,5 +1,5 @@
 <h1><%= t('dishes.view.title_edit') %></h1>
-
+<%= provide(:title, t('dishes.name')) %>
 <%= render 'form', dish: @dish %>
 
 <%= link_to 'Show', @dish %> |
