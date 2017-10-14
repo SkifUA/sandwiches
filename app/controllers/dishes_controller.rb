@@ -49,7 +49,7 @@ class DishesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dish
-      @dish = Dish.find(params[:id])
+      @dish = Dish.includes(:ingredients).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

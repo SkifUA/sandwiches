@@ -1,25 +1,44 @@
 <p id="notice"><%= notice %></p>
 <%= provide(:title, t('dishes.name')) %>
-<%= image_tag dish_img(@dish.image) %>
-<p>
-  <strong>Name:</strong>
-  <%= @dish.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @dish.description %>
-</p>
+<div class="blog">
+  <div class="container">
+    <div class="agile-blog-grids">
+      <div class="col-md-8 agile-blog-grid-left">
+        <div class="agile-blog-grid">
+          <div class="agile-blog-grid-left-img">
+            <%= image_tag dish_img(@dish.image) %>
+          </div>
 
-<p>
-  <strong>Prise:</strong>
-  <%= @dish.prise %>
-</p>
+        </div>
+      </div>
+      <div class="col-md-4 agile-blog-grid-right">
+        <h3><%= @dish.name %></h3>
+        <div class="categories">
+          <h3>Ingredients:</h3>
+          <ul>
+            <% @dish.ingredients.each do |ingredient| %>
+              <li><b><%= ingredient.product.name_with_unit %> <%= ingredient.quantity %></b></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="categories">
+          <p>
+            <%= @dish.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% if can?(:create, @dish)  %>
+      <%= link_to 'Edit', edit_dish_path(@dish) %>
+  <% end %>
+  <% if can?(:create, Ingredient)  %>
+      <%= link_to 'Edit recipe', dish_ingredients_path(@dish) %>|
+  <% end %>
+  <%= link_to 'Back', dishes_path %>
+</div>
 
-<% if can?(:create, @dish)  %>
-  <%= link_to 'Edit', edit_dish_path(@dish) %>
-<% end %>
-<% if can?(:create, Ingredient)  %>
-  <%= link_to 'Edit recipe', dish_ingredients_path(@dish) %>|
-<% end %>
-<%= link_to 'Back', dishes_path %>
+
