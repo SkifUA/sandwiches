@@ -6,7 +6,8 @@ class Product < ApplicationRecord
   before_create :default_percent_of_recycling
   enum measuring: { weight: 1, piece: 2 }
 
-  validates_presence_of :name, :measuring
+  validates :name, presence: true, length: {minimum: 5, maximum: 50}, uniqueness: true
+  validates_presence_of :measuring
 
   def unit
     if measuring == 'weight'

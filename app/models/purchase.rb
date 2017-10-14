@@ -8,6 +8,8 @@ class Purchase < ApplicationRecord
   before_save :to_cost
   after_initialize :to_cost_float
 
+  validates_presence_of :user_id, :product_id, :date_purchase
+
   scope :activated, -> () { where(active: true) }
   scope :current_product, -> (product_id, user_id) { where(product_id: product_id, user_id: user_id ) }
   scope :deactivate, -> () { update(active: false) }
