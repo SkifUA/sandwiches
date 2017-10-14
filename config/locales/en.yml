@@ -51,6 +51,11 @@ en:
       image: 'Image'
       description: 'Description'
       price: 'Price'
+    msg:
+      success:
+        create: 'Dish was successfully created.'
+        update: 'Dish was successfully updated.'
+        destroy: 'Dish was successfully destroyed.'
   periods:
     name: 'Periods'
     view:
