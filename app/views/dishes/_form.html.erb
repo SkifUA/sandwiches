@@ -17,6 +17,10 @@
   </div>
 
   <div class="field">
+    <%= form.file_field :image, id: :book_image %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :dish_description %>
   </div>

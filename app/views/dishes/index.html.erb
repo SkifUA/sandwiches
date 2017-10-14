@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Prise</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @dishes.each do |dish| %>
       <tr>
+        <td><%= image_tag dish_img(dish.image.middle, 'middle') %></td>
         <td><%= dish.name %></td>
         <td><%= dish.description %></td>
         <td><%= dish.prise %></td>
