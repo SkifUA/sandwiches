@@ -19,4 +19,8 @@ module ApplicationHelper
   def alert_generator(msg)
     js add_gritter(msg, title: "Test Website", sticky: false)
   end
+
+  def check_active path
+    'active' if current_page?(path)
+  end
 end

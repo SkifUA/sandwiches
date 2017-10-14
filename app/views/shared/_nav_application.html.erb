@@ -11,21 +11,21 @@
       <span class="menu"><%= image_tag 'menu.png' %></span>
       <ul>
 
-        <li><%= link_to t('home'), root_path, class: "active" %></li>
+        <li><%= link_to t('home'), root_path, class: "#{check_active(root_path)}" %></li>
 
-        <li><%= link_to t('dishes.name'), dishes_path, class: "active" %></li>
+        <li><%= link_to t('dishes.name'), dishes_path, class: "#{check_active(dishes_path)}" %></li>
 
         <% if can?(:show, Product) %>
-            <li><%= link_to t('products.name'), products_path %></li>
+            <li><%= link_to t('products.name'), products_path, class: "#{check_active(products_path)}" %></li>
         <% end %>
         <% if can?(:show, Place) %>
-            <li><%= link_to t('places.name'), places_path %></li>
+            <li><%= link_to t('places.name'), places_path, class: "#{check_active(places_path)}" %></li>
         <% end %>
         <% if can?(:show, Purchase) %>
-            <li><%= link_to t('purchases.name'), purchases_path %></li>
+            <li><%= link_to t('purchases.name'), purchases_path, class: "#{check_active(purchases_path)}" %></li>
         <% end %>
         <% if can?(:show, Period) %>
-            <li><%= link_to t('periods.name'), periods_path %></li>
+            <li><%= link_to t('periods.name'), periods_path, class: "#{check_active(periods_path)}" %></li>
         <% end %>
 
         <% if can?(:access, :rails_admin) %>
@@ -36,7 +36,7 @@
 
         <% if current_user %>
           <li>
-            <%= link_to edit_user_registration_path do %>
+            <%= link_to edit_user_registration_path, class: "#{check_active(edit_user_registration_path)}" do %>
               <i class="fa fa-user"></i><%= current_user.name %>
             <% end %>
           </li>
