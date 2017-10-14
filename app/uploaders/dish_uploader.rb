@@ -5,11 +5,11 @@ class DishUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [600, 400]
 
   version :middle do
-    process resize_to_fill: [200, 200]
+    process resize_to_fill: [280, 280]
   end
 
   version :thumb do
-    process resize_to_fill: [50,50]
+    process resize_to_fill: [60,60]
   end
 
   # Choose what kind of storage to use for this uploader:

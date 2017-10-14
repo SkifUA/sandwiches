@@ -6,9 +6,9 @@ module DishesHelper
 
   def dish_img(img, type='main')
     if type == 'thumb'
-      img.model.image? ? img : image_generator(height: '50', width: '50')
+      img.model.image? ? img : image_generator(height: '60', width: '60')
     elsif type == 'middle'
-      img.model.image? ? img : image_generator(height: '200', width: '200')
+      img.model.image? ? img : image_generator(height: '280', width: '280')
     else
       img.model.image? ? img : image_generator(height: '600', width: '400')
     end

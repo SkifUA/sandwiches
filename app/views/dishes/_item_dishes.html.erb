@@ -1,0 +1,26 @@
+<div class="col-md-6 w3l-special-grid">
+  <div class="col-md-6 w3ls-special-img ">
+    <div class="wpf-demo-6">
+      <div class="w3ls-special-text">
+        <p><%= item[0].prise %><sub>GUA</sub></p>
+      </div>
+      <figcaption class="view-caption">
+        <h4><%= item[0].name %></h4>
+        <%= link_to 'Click', dish_path(item[0]) %>
+      </figcaption>
+    </div>
+  </div>
+  <div class="col-md-6 w3ls-special-img menu2">
+    <div class="wpf-demo-6">
+      <div class="w3ls-special-text menu-text">
+        <p><%= item[1].prise %><sub>GUA</sub></p>
+      </div>
+      <figcaption class="view-caption">
+        <h4><%= item[1].name %></h4>
+        <%= link_to 'Click', dish_path(item[1]) %>
+      </figcaption>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+  <div class="clearfix"> </div>
+</div>
