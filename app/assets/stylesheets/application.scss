@@ -1,5 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "W3layouts/font-awesome";
+@import "W3layouts/owl.carousel";
+@import "W3layouts/owl.theme";
 /*--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -17,8 +20,11 @@ html, body{
     font-size: 100%;
     font-family: 'Roboto Condensed', sans-serif;
 }
+.body-container {
+  height: 100%;
+}
 .banner{
-    background: url(../images/1.jpg) no-repeat 0px -66px;
+    background: url(1.jpg) no-repeat 0px -66px;
     background-size: cover;
     padding: 0em 0 11em 0;
 }
@@ -185,7 +191,7 @@ span.menu {
     text-decoration: none;
     width: 40px;
     height: 40px;
-    background: transparent url("../images/arrows.png") no-repeat left top;
+    background: transparent url("arrows.png") no-repeat left top;
 }
 .callbacks_nav:hover{
     opacity: 0.3;
@@ -407,7 +413,7 @@ i.fa.fa-cutlery {
 }
 .w3ls-special-img {
     padding: 0;
-    background: url(../images/sp1.jpg) no-repeat 0px 0px;
+    background: url(sp1.jpg) no-repeat 0px 0px;
     min-height: 280px;
     background-size: cover;
     text-align: center;
@@ -445,15 +451,15 @@ i.fa.fa-cutlery {
     font-size: .9em;
 }
 .wthree-img{
-    background: url(../images/sp2.jpg) no-repeat 0px 0px !important;
+    background: url(sp2.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .wthree-img2{
-    background: url(../images/sp3.jpg) no-repeat 0px 0px !important;
+    background: url(sp3.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .wthree-img3{
-    background: url(../images/sp4.jpg) no-repeat 0px 0px !important;
+    background: url(sp4.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .w3ls-special-text p{
@@ -928,7 +934,7 @@ figure.effect-jazz:hover p {
 /*-- team --*/
 .team{
     padding:4em 0;
-    background:url(../images/5.jpg) no-repeat 0px 0px;
+    background:url(5.jpg) no-repeat 0px 0px;
     background-size:cover;
 }
 .jarallax {
@@ -1415,7 +1421,7 @@ i.fa.fa-pencil{
 }
 .categories ul li {
     display: block;
-    background: url(../images/arrow.png) no-repeat 0px 2px;
+    background: url(arrow.png) no-repeat 0px 2px;
     margin-bottom: 1em;
 }
 .categories ul li a {
@@ -1562,15 +1568,15 @@ i.fa.fa-pencil{
     margin: 0 !important;
 }
 .menu1 {
-    background: url(../images/m1.jpg) no-repeat 0px 0px !important;
+    background: url(m1.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .menu2 {
-    background: url(../images/m2.jpg) no-repeat 0px 0px !important;
+    background: url(m2.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .menu3 {
-    background: url(../images/m3.jpg) no-repeat 0px 0px !important;
+    background: url(m3.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .menu-text p {
@@ -1704,7 +1710,7 @@ button.btn1:hover {
 /*-- responsive --*/
 @media(max-width:1080px){
     .banner {
-        background: url(../images/1.jpg) no-repeat 0px 0px;
+        background: url(1.jpg) no-repeat 0px 0px;
         background-size: cover;
     }
     .top-nav ul li:nth-child(3) {
@@ -2022,7 +2028,7 @@ button.btn1:hover {
         height: 417px;
     }
     .w3ls-special-img {
-        background: url(../images/sp1.jpg) no-repeat 0px 0px;
+        background: url(sp1.jpg) no-repeat 0px 0px;
         min-height: 180px;
         background-size: cover;
     }
@@ -2138,7 +2144,7 @@ button.btn1:hover {
 }
 @media(max-width:320px){
     .banner {
-        background: url(../images/1.jpg) no-repeat -129px 0px;
+        background: url(1.jpg) no-repeat -129px 0px;
         background-size: cover;
     }
     .logo {
@@ -2171,7 +2177,7 @@ button.btn1:hover {
         overflow: hidden;
     }
     .w3ls-special-img {
-        background: url(../images/sp1.jpg) no-repeat 0px 0px;
+        background: url(sp1.jpg) no-repeat 0px 0px;
         min-height: 145px;
         background-size: cover;
     }
@@ -2194,7 +2200,7 @@ button.btn1:hover {
     }
     .about-bg {
         padding: 0em 0 1em 0 !important;
-        background: url(../images/1.jpg) no-repeat 0px 0px !important;
+        background: url(1.jpg) no-repeat 0px 0px !important;
         background-size: cover !important;
     }
     .h-f {
