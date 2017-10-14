@@ -32,15 +32,18 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <h3>
+      <% if can?(:create, @dish)  %>
+        <%= render 'shared/link_default', { path: edit_dish_path(@dish), title: t('button.edit') } %>
+      <% end %>
+      <% if can?(:create, Ingredient)  %>
+        <%= render 'shared/link_default', { path: dish_ingredients_path(@dish), title: t('button.edit_ingredients') } %>
+      <% end %>
+      <%= render 'shared/link_default', { path: dishes_path, title: t('button.back') } %>
+    </h3>
+  </div>
 </div>
-<div class="container">
-  <% if can?(:create, @dish)  %>
-      <%= link_to 'Edit', edit_dish_path(@dish) %>
-  <% end %>
-  <% if can?(:create, Ingredient)  %>
-      <%= link_to 'Edit recipe', dish_ingredients_path(@dish) %>|
-  <% end %>
-  <%= link_to 'Back', dishes_path %>
-</div>
+
 
 

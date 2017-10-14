@@ -2,7 +2,7 @@
 <%= provide(:title, t('dishes.name')) %>
 <div class="menu">
   <div class="container">
-    <h1><%= t('dishes.name') %></h1>
+
     <div class="special-grids menu-grids">
       <% @dishes.in_groups_of(2).each do |item| %>
         <%= render 'item_dishes', item: item %>
@@ -10,9 +10,9 @@
     </div>
 
   </div>
-  <div class="container">
+  <div class="container btn-container">
     <% if can?(:create, Dish)  %>
-        <%= link_to 'New Dish', new_dish_path %>
+        <%= render 'shared/link_default', { path: new_dish_path, title: t('dishes.view.title_new') } %>
     <% end %>
   </div>
 </div>

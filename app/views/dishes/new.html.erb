@@ -2,4 +2,6 @@
 <%= provide(:title, t('dishes.name')) %>
 <%= render 'form', dish: @dish %>
 
-<%= link_to 'Back', dishes_path %>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: dishes_path, title: t('button.back') } %>
+</div>
