@@ -61,5 +61,6 @@ gem 'google-api-client', '~> 0.15.0'
 gem 'rails_admin', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~> 5.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 ruby "2.4.0"
