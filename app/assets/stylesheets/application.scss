@@ -36,7 +36,7 @@ html, body{
 }
 .logo {
     position: absolute;
-    top: 23%;
+    top: 10%;
     z-index: 999;
     left: 41.5%;
 }
@@ -67,9 +67,9 @@ span.menu {
 .top-nav ul li{
     list-style-type:none;
     display: inline-block;
-    margin: 0 2em;
+    margin: 0 1em;
 }
-.top-nav ul li:nth-child(3) {
+.top-nav ul li:nth-child(4) {
     margin-right: 31em;
 }
 .top-nav li a {
