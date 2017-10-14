@@ -122,6 +122,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
+    gritter (1.2.0)
     haml (5.0.1)
       temple (>= 0.8.0)
       tilt
@@ -331,6 +332,7 @@ DEPENDENCIES
   dotenv (~> 2.2, >= 2.2.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
   google-api-client (~> 0.15.0)
+  gritter (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
