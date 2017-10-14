@@ -33,6 +33,14 @@
         <% end %>
 
         <%= login_helper %>
+
+        <% if current_user %>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <i class="fa fa-user"></i><%= current_user.name %>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
       <!-- script-for-menu -->
       <script>

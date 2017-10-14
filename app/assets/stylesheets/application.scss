@@ -38,7 +38,7 @@ html, body{
     position: absolute;
     top: 10%;
     z-index: 999;
-    left: 41.5%;
+    left: 2%;
 }
 .logo  h1{
     margin:0;
@@ -53,9 +53,10 @@ html, body{
     text-transform: uppercase;
 }
 .top-nav {
-    text-align: center;
+    text-align: right;
     width: 100%;
     margin: 0 auto;
+    padding-right: 20px;
 }
 span.menu {
     display: none;
@@ -69,9 +70,9 @@ span.menu {
     display: inline-block;
     margin: 0 1em;
 }
-.top-nav ul li:nth-child(4) {
-    margin-right: 31em;
-}
+//.top-nav ul li:nth-child(4) {
+//    margin-right: 31em;
+//}
 .top-nav li a {
     color: #333;
     font-size: 1em;
@@ -1716,7 +1717,7 @@ button.btn1:hover {
         margin-right: 28em;
     }
     .logo {
-        left: 38.5%;
+        left: 2%;
     }
     .services-grid-caption {
         height: 279px;
@@ -1745,7 +1746,7 @@ button.btn1:hover {
         margin-right: 25em;
     }
     .logo {
-        left: 37.5%;
+        left: 2%;
     }
     .services-grid-caption {
         height: 264px;
@@ -1813,7 +1814,7 @@ button.btn1:hover {
         margin-right: 22em;
     }
     .logo {
-        left: 34.5%;
+        left: 2%;
     }
     .banner {
         padding: 0em 0 4em 0;
@@ -1844,7 +1845,7 @@ button.btn1:hover {
         margin-right: 18em;
     }
     .logo {
-        left: 32.5%;
+        left: 1.5%;
     }
 }
 @media(max-width:667px){
