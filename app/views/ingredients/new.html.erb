@@ -1,4 +1,6 @@
-<h1>New Ingredient for <%= @dish.name %></h1>
+<%= provide(:title, t('ingredient.name')) %>
+<div class="container">
+<h1><%= t('ingredient.view.title_edit') %> <%= @dish.name %></h1>
 <%= form_with(model: @ingredient,
               url: {action:"create",
                     controller: "ingredients",
@@ -7,4 +9,7 @@
     <%= render 'form', { form: form, ingredient: @ingredient }  %>
 <% end %>
 
-<%= link_to 'Back', dish_ingredients_path(@dish) %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: dish_ingredients_path(@dish), title: t('button.back') } %>
+</div>

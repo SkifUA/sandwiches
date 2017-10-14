@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, t('ingredient.name')) %>
+<div class="container">
+<h1><%= t('ingredient.view.title_edit') %> <%= @dish.name %></h1>
 
-<h1>Ingredients for <%= @dish.name %></h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Product</th>
       <th>Quantity</th>
-      <th colspan="2"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -16,13 +16,24 @@
       <tr>
         <td><%= ingredient.product.name_with_unit %></td>
         <td><%= ingredient.quantity %></td>
-        <td><%= link_to 'Show', dish_ingredient_path(@dish, ingredient) %></td>
-        <td><%= link_to 'Edit', edit_dish_ingredient_path(@dish, ingredient) %></td>
+        <!--<td>-->
+          <!--<%#= link_to dish_ingredient_path(@dish, ingredient) do %>-->
+              <!--<i class="fa fa-file-text-o"></i>-->
+          <!--<%# end %>-->
+        <!--</td>-->
+        <td>
+          <%= link_to edit_dish_ingredient_path(@dish, ingredient) do %>
+              <i class="fa fa-pencil-square-o"></i>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: dish_path(@dish), title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: new_dish_ingredient_path(@dish), title: t('ingredient.view.add') } %>
+</div>
 
-<%= link_to 'New Ingredient', new_dish_ingredient_path(@dish) %>

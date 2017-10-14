@@ -1,15 +1,18 @@
-<h1>Editing Ingredient for <%= @dish.name %></h1>
+<%= provide(:title, t('ingredient.name')) %>
+<div class="container">
+  <h1>Editing Ingredient for <%= @dish.name %></h1>
 
-<%= form_with(model: @ingredient,
-              url: {action:"update",
-                    controller: "ingredients",
-                    dish_id: @dish.id},
-              method: :put) do |form| %>
+  <%= form_with(model: @ingredient,
+                url: {action:"update",
+                      controller: "ingredients",
+                      dish_id: @dish.id},
+                method: :put) do |form| %>
 
-    <%= render 'form', { form: form, ingredient: @ingredient } %>
-<% end %>
+      <%= render 'form', { form: form, ingredient: @ingredient } %>
+  <% end %>
 
-
-
-<%= link_to 'Show', dish_ingredient_path(@dish, @ingredient) %> |
-<%= link_to 'Back', dish_ingredients_path %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: dish_ingredients_path(@dish), title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: dish_ingredient_path(@dish, @ingredient), title: t('button.show') } %>
+</div>

@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, t('ingredient.name')) %>
+<div class="container">
 
-<p>
-  <strong>Dish:</strong>
-  <%= @dish.name %>
-</p>
+  <p>
+    <strong><%= t('dishes.name') %>:</strong>
+    <%= @dish.name %>
+  </p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @ingredient.product.name %>
-</p>
+  <p>
+    <strong>Product:</strong>
+    <%= @ingredient.product.name %>
+  </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @ingredient.quantity %>
-</p>
+  <p>
+    <strong>Quantity:</strong>
+    <%= @ingredient.quantity %>
+  </p>
 
-<%= link_to 'Edit', edit_dish_ingredient_path(@dish, @ingredient) %> |
-<%= link_to 'Back', dish_ingredients_path(@dish) %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: dish_ingredients_path(@dish), title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: edit_dish_ingredient_path(@dish, @ingredient), title: t('button.edit') } %>
+</div>

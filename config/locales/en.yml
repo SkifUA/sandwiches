@@ -24,12 +24,16 @@ en:
       title_new: 'New Product'
   ingredient:
     name: 'Ingredient'
+    save: 'Save Ingredient'
+    tab:
+      product: 'Product'
+      quantity: 'Quantity'
     validates:
       unique: 'This product exist'
     view:
-      title_edit: 'Editing Product for '
-      title_new: 'New Product for '
-      add: 'Add Product'
+      title_edit: 'Editing Ingredient for '
+      title_new: 'New Ingredient for '
+      add: 'Add Ingredient'
   places:
     name: 'Places'
     view:
