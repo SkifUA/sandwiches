@@ -3,13 +3,11 @@ class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   # GET /dishes
-  # GET /dishes.json
   def index
     @dishes = Dish.all
   end
 
   # GET /dishes/1
-  # GET /dishes/1.json
   def show
   end
 
@@ -23,43 +21,29 @@ class DishesController < ApplicationController
   end
 
   # POST /dishes
-  # POST /dishes.json
   def create
     @dish = Dish.new(dish_params)
 
-    respond_to do |format|
-      if @dish.save
-        format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
-        format.json { render :show, status: :created, location: @dish }
-      else
-        format.html { render :new }
-        format.json { render json: @dish.errors, status: :unprocessable_entity }
-      end
+    if @dish.save
+      redirect_to @dish, notice: 'Dish was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /dishes/1
-  # PATCH/PUT /dishes/1.json
   def update
-    respond_to do |format|
-      if @dish.update(dish_params)
-        format.html { redirect_to @dish, notice: 'Dish was successfully updated.' }
-        format.json { render :show, status: :ok, location: @dish }
-      else
-        format.html { render :edit }
-        format.json { render json: @dish.errors, status: :unprocessable_entity }
-      end
+    if @dish.update(dish_params)
+      redirect_to @dish, notice: 'Dish was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /dishes/1
-  # DELETE /dishes/1.json
   def destroy
     @dish.destroy
-    respond_to do |format|
-      format.html { redirect_to dishes_url, notice: 'Dish was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to dishes_url, notice: 'Dish was successfully destroyed.'
   end
 
   private
