@@ -7,7 +7,9 @@
       <div class="col-md-8 agile-blog-grid-left">
         <div class="agile-blog-grid">
           <div class="agile-blog-grid-left-img">
-            <%= image_tag dish_img(@dish.image) %>
+            <%= link_to "#" do %>
+              <%= image_tag dish_img(@dish.image) %>
+            <% end %>
           </div>
 
         </div>
