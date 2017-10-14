@@ -1,36 +1,36 @@
 <%= form_with(model: dish, local: true) do |form| %>
   <% if dish.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
-
-      <ul>
-      <% dish.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% dish.errors.full_messages.each do |error| %>
+          <%= alert_generator(error) %>
       <% end %>
-      </ul>
-    </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :dish_name %>
-  </div>
+      <div class="form-group">
+        <%= form.label t('dishes.tab.name') %>
+        <%= form.text_field :name, id: :dish_name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.file_field :image, id: :book_image %>
-  </div>
+      <div class="form-group">
+        <%= form.file_field :image, id: :book_image, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :dish_description %>
-  </div>
+      <div class="form-group">
+        <%= form.label t('dishes.tab.description') %>
+        <%= form.text_area :description, id: :dish_description, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :prise %>
-    <%= form.number_field :prise, id: :dish_prise %>
-  </div>
+      <div class="form-group">
+        <%= form.label t('dishes.tab.price') %>
+        <%= form.number_field :prise, id: :dish_prise, class: 'form-control' %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions">
+        <%= form.submit t('dishes.save'), class: 'btn btn-primary btn-block' %>
+      </div>
   </div>
+  <div class="col-md-3"></div>
+</div>
 <% end %>

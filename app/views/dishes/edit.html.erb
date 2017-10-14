@@ -1,6 +1,8 @@
-<h1><%= t('dishes.view.title_edit') %></h1>
-<%= provide(:title, t('dishes.name')) %>
-<%= render 'form', dish: @dish %>
+<div class="container">
+  <h1><%= t('dishes.view.title_edit') %></h1>
+  <%= provide(:title, t('dishes.name')) %>
+  <%= render 'form', dish: @dish %>
+</div>
 
 <div class="container btn-container">
   <%= render 'shared/link_default', { path: @dish, title: t('button.show') } %>

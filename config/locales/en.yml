@@ -42,17 +42,23 @@ en:
       title_new: 'New Purchase'
   dishes:
     name: 'Dishes'
+    save: 'Save Dish'
     view:
       title_edit: 'Editing Dish'
       title_new: 'New Dish'
+    tab:
+      name: 'Name'
+      image: 'Image'
+      description: 'Description'
+      price: 'Price'
   periods:
-      name: 'Periods'
-      view:
-        title_edit: 'Editing Period'
-        title_new: 'New Period'
-        link_report: 'Report'
+    name: 'Periods'
+    view:
+      title_edit: 'Editing Period'
+      title_new: 'New Period'
+      link_report: 'Report'
   orders:
-        name: 'Orders'
-        view:
-          title_edit: 'Editing Order'
-          title_new: 'New Order'
+    name: 'Orders'
+    view:
+      title_edit: 'Editing Order'
+      title_new: 'New Order'
