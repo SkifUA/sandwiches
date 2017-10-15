@@ -23,4 +23,8 @@ module ApplicationHelper
   def check_active path
     'active' if current_page?(path)
   end
+
+  def date_by_format(date)
+    date.strftime("%d/%m/%Y")
+  end
 end

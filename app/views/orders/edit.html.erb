@@ -1,7 +1,7 @@
 <%= provide(:title, t('orders.name')) %>
 <div class="container">
   <h1><%= t('orders.view.title_edit') %></h1>
-  <h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
+  <h2><%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %></h2>
   <%= form_with(model: @order,
                 url: {action:"update",
                       controller: "orders",

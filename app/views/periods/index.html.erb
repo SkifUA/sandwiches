@@ -14,8 +14,8 @@
     <tbody>
       <% @periods.each do |period| %>
         <tr>
-          <td><%= period.start_date %></td>
-          <td><%= period.finish_date %></td>
+          <td><%= date_by_format(period.start_date) %></td>
+          <td><%= date_by_format(period.finish_date) %></td>
           <td><%= period.days %></td>
 
           <td>

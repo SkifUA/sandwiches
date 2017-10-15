@@ -1,6 +1,6 @@
 <div class="container">
   <%= provide(:title, t('orders.name')) %>
-  <h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
+  <h2><%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %></h2>
 
   <table class="table">
     <thead>

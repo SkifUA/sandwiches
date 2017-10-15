@@ -2,7 +2,7 @@
   <%= link_to 'Send order to Sheets',
               send_products_path(@period, params.fetch(:user_id)),
               method: :post %>
-  <h1>Period: <%= @period.start_date %> - <%= @period.finish_date %> </h1>
+  <h1>Period: <%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %> </h1>
   <h2>For Cook: <%= @user_name %></h2>
   <h3>Orders</h3>
   <% @orders.each do |order| %>
