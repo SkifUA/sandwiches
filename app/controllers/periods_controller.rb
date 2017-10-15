@@ -5,7 +5,7 @@ class PeriodsController < ApplicationController
 
   # GET /periods
   def index
-    @periods = Period.all.order(finish_date: :desc)
+    @periods = Period.all.order(finish_date: :desc).page(params[:page]).per(10)
   end
 
   # GET /periods/1

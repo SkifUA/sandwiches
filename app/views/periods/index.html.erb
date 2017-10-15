@@ -1,37 +1,38 @@
 <div class="container">
   <%= provide(:title, t('periods.name')) %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th><%= t('periods.tab.start_day') %></th>
-      <th><%= t('periods.tab.finish_day') %></th>
-      <th><%= t('periods.tab.days') %></th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @periods.each do |period| %>
+  <%= paginate @periods %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= period.start_date %></td>
-        <td><%= period.finish_date %></td>
-        <td><%= period.days %></td>
-
-        <td>
-          <% if can?(:update, period) %>
-            <%= link_to edit_period_path(period) do %>
-              <i class="fa fa-pencil-square-o"></i>
-            <% end %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to t('periods.view.link_orders'), period_orders_path(period) %>
-        </td>
+        <th><%= t('periods.tab.start_day') %></th>
+        <th><%= t('periods.tab.finish_day') %></th>
+        <th><%= t('periods.tab.days') %></th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @periods.each do |period| %>
+        <tr>
+          <td><%= period.start_date %></td>
+          <td><%= period.finish_date %></td>
+          <td><%= period.days %></td>
+
+          <td>
+            <% if can?(:update, period) %>
+              <%= link_to edit_period_path(period) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to t('periods.view.link_orders'), period_orders_path(period) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @periods %>
 </div>
 
 <div class="container btn-container">
