@@ -1,0 +1,11 @@
+<% if current_user.admin? %>
+    <div class="form-group">
+      <%= form.label t('purchases.tab.user') %>
+      <%= form.collection_select(:user_id, User.cooks, :id, :name,
+                                 { include_blank: true },
+                                 class: 'form-control')
+      %>
+    </div>
+<% else %>
+    <%= form.hidden_field :user_id, id: :purchase_user_id, value: current_user.id %>
+<% end %>

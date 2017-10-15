@@ -1,5 +1,11 @@
-<h1><%= t('purchases.view.title_new') %>></h1>
+<div class="container">
+  <%= provide(:title, t('purchases.name')) %>
 
-<%= render 'form', purchase: @purchase %>
+  <h1><%= t('purchases.view.title_new') %></h1>
 
-<%= link_to 'Back', purchases_path %>
+  <%= render 'form', purchase: @purchase %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: purchases_path, title: t('button.back') } %>
+</div>
+

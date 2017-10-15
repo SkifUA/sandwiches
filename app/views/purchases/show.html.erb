@@ -1,46 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= provide(:title, t('purchases.name')) %>
+  <h3>
+    <strong>Date purchase:</strong>
+    <%= date_by_format(@purchase.date_purchase) %>
+  </h3>
+  <p>
+    <strong>User:</strong>
+    <%= @purchase.user.name %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @purchase.user.name %>
-</p>
+  <p>
+    <strong>Product:</strong>
+    <%= @purchase.product.name_with_unit %>
+  </p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @purchase.product.name %>
-</p>
+  <p>
+    <strong>Bought:</strong>
+    <%= @purchase.bought %>
+  </p>
 
-<p>
-  <strong>Date purchase:</strong>
-  <%= @purchase.date_purchase %>
-</p>
+  <p>
+    <strong>Cost:</strong>
+    <%= @purchase.cost_float %>
+  </p>
 
-<p>
-  <strong>Bought:</strong>
-  <%= @purchase.bought %>
-</p>
+  <p>
+    <strong>Left:</strong>
+    <%= @purchase.left %>
+  </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @purchase.cost_float %>
-</p>
+  <p>
+    <strong>Left finished:</strong>
+    <%= @purchase.left_finished %>
+  </p>
 
-<p>
-  <strong>Left:</strong>
-  <%= @purchase.left %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @purchase.description %>
+  </p>
+</div>
 
-<p>
-  <strong>Left finished:</strong>
-  <%= @purchase.left_finished %>
-</p>
+<div class="container btn-container">
+  <% if can?(:update, @purchase) %>
+      <%= render 'shared/link_default', { path: edit_purchase_path(@purchase), title: t('button.edit') } %>
+  <% end %>
+  <%= render 'shared/link_default', { path: purchases_path, title: t('button.back') } %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @purchase.description %>
-</p>
-
-<% if can?(:update, @purchase)  %>
-  <%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<% end %>
-<%= link_to 'Back', purchases_path %>

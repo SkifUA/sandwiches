@@ -63,6 +63,21 @@ en:
       title_new: 'New Place'
   purchases:
     name: 'Purchases'
+    save: 'Save Purchase'
+    tab:
+      user: 'Cook'
+      product: 'Product'
+      date_purchase: 'Date purchase'
+      bought: 'Bought'
+      cost: 'Cost'
+      left: 'Left'
+      left_finished: 'Left finished'
+      description: 'Description'
+      active: 'Active'
+    success:
+      create: 'Purchase was successfully created.'
+      update: 'Purchase was successfully updated.'
+      destroy: 'Purchase was successfully destroyed.'
     view:
       title_edit: 'Editing Purchase'
       title_new: 'New Purchase'

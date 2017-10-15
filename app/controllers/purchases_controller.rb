@@ -60,6 +60,6 @@ class PurchasesController < ApplicationController
     end
 
     def get_products
-      @products = Product.all
+      @products = Product.all.order(:name)
     end
 end

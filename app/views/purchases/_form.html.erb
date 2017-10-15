@@ -1,60 +1,60 @@
 <%= form_with(model: purchase, local: true) do |form| %>
   <% if purchase.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
-
-      <ul>
-      <% purchase.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% purchase.errors.full_messages.each do |error| %>
+      <%= alert_generator(error) %>
+    <% end %>
   <% end %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
 
-  <%= form.hidden_field :user_id, id: :purchase_user_id, value: current_user.id %>
+      <%= render 'input_cook', form:form %>
 
-    <div class="form-group">
-      <%= form.label :product_id %>
-      <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
-                                 {
-                                     include_blank: true
-                                 },
-                                 class: 'form-control'
-          )
-      %>
+      <div class="form-group">
+        <%= form.label :product_id %>
+        <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
+                                   {
+                                       include_blank: true
+                                   },
+                                   class: 'form-control'
+            )
+        %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :date_purchase %>
+        <%= form.date_select :date_purchase, id: :purchase_date_purchase, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :bought %>
+        <%= form.number_field :bought, id: :purchase_bought, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :cost %>
+        <%= form.number_field :cost_float, id: :purchase_cost_float, step: 0.01, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :left %>
+        <%= form.number_field :left, id: :purchase_left, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :left_finished %>
+        <%= form.number_field :left_finished, id: :purchase_left_finished, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :place_description, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit t('purchases.save'), class: 'btn btn-primary btn-block' %>
+      </div>
     </div>
-
-  <div class="field">
-    <%= form.label :date_purchase %>
-    <%= form.date_select :date_purchase, id: :purchase_date_purchase %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bought %>
-    <%= form.number_field :bought, id: :purchase_bought %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cost %>
-    <%= form.number_field :cost_float, id: :purchase_cost_float, step: 0.01 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :left %>
-    <%= form.number_field :left, id: :purchase_left %>
-  </div>
-
-  <div class="field">
-    <%= form.label :left_finished %>
-    <%= form.number_field :left_finished, id: :purchase_left_finished %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :place_description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="col-md-3"></div>
   </div>
 <% end %>
