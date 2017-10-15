@@ -1,6 +1,7 @@
 en:
   home: 'Home'
   hello: "Hello world"
+  currency: 'gua'
   sign_up: 'Sign Up'
   login: 'Login'
   logout: 'Logout'
@@ -141,3 +142,8 @@ en:
     sent:
       link: 'Check Google table, please'
       text: 'Data was sent to Google Table'
+  pages:
+    home:
+      history:
+        title: 'We always welcome our guests'
+        text: 'We are always glad to our guests, therefore, we constantly hold rallies and draw prizes'

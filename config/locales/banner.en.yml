@@ -1,0 +1,52 @@
+en:
+  banner:
+    slider:
+      title1: '1Everyone loves coffee in the morning'
+      text1: '1Everyone loves coffee in the morning'
+      title2: '2Everyone loves coffee in the morning'
+      text2: '2Everyone loves coffee in the morning'
+      title3: '3Everyone loves coffee in the morning'
+      text3: '3Everyone loves coffee in the morning'
+      title4: '4Everyone loves coffee in the morning'
+      text4: '4Everyone loves coffee in the morning'
+      title5: '4Everyone loves coffee in the morning'
+      text5: '4Everyone loves coffee in the morning'
+    special:
+      title: 'Today Specials'
+      text: 'Today Specials Today Specials Today Specials Today Specials Today Specials Today Specials'
+    services:
+      title: 'Our services'
+      text: 'Our services Our services Our services Our services Our services Our services Our services Our services'
+      slides:
+        slide1:
+          img: 's1.jpg'
+          title: 'slide1'
+          text: 'slide1 slide1'
+        slide2:
+          img: 's2.jpg'
+          title: 'slide2'
+          text: 'slide2 slide2'
+        slide3:
+          img: 's3.jpg'
+          title: 'slide3'
+          text: 'slide3 slide3'
+        slide4:
+          img: 's4.jpg'
+          title: 'slide4'
+          text: 'slide4 slide4'
+        slide5:
+          img: 's5.jpg'
+          title: 'slide5'
+          text: 'slide5 slide5'
+        slide6:
+          img: 's6.jpg'
+          title: 'slide6'
+          text: 'slide6 slide6'
+        slide7:
+          img: 's7.jpg'
+          title: 'slide7'
+          text: 'slide7 slide7'
+        slide8:
+          img: 's1.jpg'
+          title: 'slide8'
+          text: 'slide8 slide8'

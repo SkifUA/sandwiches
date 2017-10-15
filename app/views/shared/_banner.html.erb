@@ -5,36 +5,36 @@
         <ul class="rslides" id="slider4">
           <li>
             <div class="banner-info">
-              <h3>Lorem ipsum dolor sit amet</h3>
-              <p>Donec tellus metus, ornare et mollis ut, maximus id nisi. Quisque scelerisque accumsan sem nec ullamcorper. Cras sed purus eget augue egestas commodo. Sed erat magna, pharetra aliquet mattis mollis, maximus eget lacus. </p>
+              <h3><%= t('banner.slider.title1') %></h3>
+              <p><%= t('banner.slider.text1') %></p>
               <%= link_to 'Dishes', dishes_path %>
             </div>
           </li>
           <li>
             <div class="banner-info">
-              <h3>Fusce egestas purus in nulla</h3>
-              <p>Sed erat magna, pharetra aliquet mattis mollis, maximus eget lacus. Donec tellus metus, ornare et mollis ut, maximus id nisi. Quisque scelerisque accumsan sem nec ullamcorper. Cras sed purus eget augue egestas commodo. </p>
+              <h3><%= t('banner.slider.title2') %></h3>
+              <p><%= t('banner.slider.text2') %></p>
               <%= link_to 'Dishes', dishes_path %>
             </div>
           </li>
           <li>
             <div class="banner-info">
-              <h3>Duis faucibus dolor risus</h3>
-              <p>Quisque scelerisque accumsan sem nec ullamcorper. Donec tellus metus, ornare et mollis ut, maximus id nisi. Cras sed purus eget augue egestas commodo. Sed erat magna, pharetra aliquet mattis mollis, maximus eget lacus. </p>
+              <h3><%= t('banner.slider.title3') %></h3>
+              <p><%= t('banner.slider.text3') %></p>
               <%= link_to 'Dishes', dishes_path %>
             </div>
           </li>
           <li>
             <div class="banner-info">
-              <h3>Lorem ipsum dolor sit amet</h3>
-              <p>Donec tellus metus, ornare et mollis ut, maximus id nisi. Quisque scelerisque accumsan sem nec ullamcorper. Cras sed purus eget augue egestas commodo. Sed erat magna, pharetra aliquet mattis mollis, maximus eget lacus. </p>
+              <h3><%= t('banner.slider.title4') %></h3>
+              <p><%= t('banner.slider.text4') %></p>
               <%= link_to 'Dishes', dishes_path %>
             </div>
           </li>
           <li>
             <div class="banner-info">
-              <h3>Fusce egestas purus in nulla</h3>
-              <p>Sed erat magna, pharetra aliquet mattis mollis, maximus eget lacus. Donec tellus metus, ornare et mollis ut, maximus id nisi. Quisque scelerisque accumsan sem nec ullamcorper. Cras sed purus eget augue egestas commodo. </p>
+              <h3><%= t('banner.slider.title5') %></h3>
+              <p><%= t('banner.slider.text5') %></p>
               <%= link_to 'Dishes', dishes_path %>
             </div>
           </li>
@@ -48,7 +48,7 @@
             auto: true,
             pager:true,
             nav:false,
-            speed: 500,
+            speed: 1000,
             namespace: "callbacks",
             before: function () {
               $('.events').append("<li>before event fired.</li>");
