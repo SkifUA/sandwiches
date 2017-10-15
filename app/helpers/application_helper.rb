@@ -17,7 +17,7 @@ module ApplicationHelper
   end
 
   def alert_generator(msg)
-    js add_gritter(msg, title: "Test Website", sticky: false)
+    js add_gritter(msg, title: "Франс.уа", sticky: false)
   end
 
   def check_active path

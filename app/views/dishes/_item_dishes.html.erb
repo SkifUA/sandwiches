@@ -15,7 +15,7 @@
        style="background: url(<%= dish_img(item[1].image.middle) %>) no-repeat 0px 0px">
     <div class="wpf-demo-6">
       <div class="w3ls-special-text menu-text">
-        <p><%= item[1].price %><sub>GUA</sub></p>
+        <p><%= item[1].price %><sub><%= t('currency') %></sub></p>
       </div>
       <figcaption class="view-caption">
         <h4><%= item[1].name %></h4>
