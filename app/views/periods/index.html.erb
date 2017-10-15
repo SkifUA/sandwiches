@@ -36,7 +36,7 @@
 </div>
 
 <div class="container btn-container">
-  <% if can?(:create, Order) %>
+  <% if can?(:create, Period) %>
     <%= render 'shared/link_default', { path: new_period_path, title: t('periods.view.title_new') } %>
   <% end %>
 </div>

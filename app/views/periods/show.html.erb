@@ -18,8 +18,8 @@
 </div>
 
 <div class="container btn-container">
-  <% if can?(:update, Period) %>
-    <%= render 'shared/link_default', { path: edit_period_path, title: t('button.edit') } %>
+  <% if can?(:update, @period) %>
+    <%= render 'shared/link_default', { path: edit_period_path(@period), title: t('button.edit') } %>
   <% end %>
   <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
 </div>
