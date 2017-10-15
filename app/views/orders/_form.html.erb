@@ -1,45 +1,47 @@
-<% if order.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-    <ul>
-    <% order.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<% if order.errors.any? %>
+    <% order.errors.full_messages.each do |error| %>
+        <%= alert_generator(error) %>
     <% end %>
-    </ul>
-  </div>
 <% end %>
 
-<%= form.hidden_field :period_id, id: :order_period_id, value: @period.id %>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <%= form.hidden_field :period_id, id: :order_period_id, value: @period.id %>
 
-<div class="form-group">
-  <%= form.label 'Dish' %>
-  <%= form.collection_select(:dish_id, Dish.all, :id, :name,
-                             {
-                                 include_blank: true
-                             },
-                             class: 'form-control'
-      )
-  %>
+    <div class="form-group">
+      <%= form.label t('orders.tab.dish') %>
+      <%= form.collection_select(:dish_id, Dish.all, :id, :name,
+                                 {
+                                     include_blank: true
+                                 },
+                                 class: 'form-control'
+          )
+      %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label t('orders.tab.user') %>
+      <%= form.collection_select(:user_id, User.cooks, :id, :name,
+                                 {
+                                     include_blank: true
+                                 },
+                                 class: 'form-control'
+          )
+      %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label t('orders.tab.quantity') %>
+      <%= form.number_field :quantity, id: :order_quantity, class: 'form-control' %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit t('orders.save'), class: 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
 </div>
-
-<div class="form-group">
-  <%= form.label 'Cook' %>
-  <%= form.collection_select(:user_id, User.cooks, :id, :name,
-                             {
-                                 include_blank: true
-                             },
-                             class: 'form-control'
-      )
-  %>
-</div>
-
-<div class="field">
-  <%= form.label 'Quantity in day' %>
-  <%= form.number_field :quantity, id: :order_quantity %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
-

@@ -68,6 +68,22 @@ en:
       link_report: 'Report'
   orders:
     name: 'Orders'
+    save: 'Save Order'
+    tab:
+      dish: 'Dish'
+      user: 'Cook'
+      quantity: 'Quantity in day'
     view:
       title_edit: 'Editing Order'
       title_new: 'New Order'
+      add: 'Add Order'
+      report: 'Reports products for cook'
+    msg:
+      success:
+        create: 'Order was successfully created.'
+        update: 'Order was successfully updated.'
+        destroy: 'Order was successfully destroyed.'
+      error:
+        create: 'Order not created.'
+        update: 'Order not updated.'
+        destroy: 'Order not destroyed.'

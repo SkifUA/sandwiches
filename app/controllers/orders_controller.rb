@@ -25,9 +25,9 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
-       redirect_to period_order_path(@period, @order), notice: 'Order was successfully created.'
+      redirect_to period_order_path(@period, @order), notice: t('orders.msg.success.create')
     else
-      render :new
+      redirect_to new_period_order_path(@period), notice: t('orders.msg.error.create')
     end
 
   end
@@ -35,16 +35,19 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   def update
     if @order.update(order_params)
-      redirect_to period_orders_path(@period), notice: 'Order was successfully updated.'
+      redirect_to period_orders_path(@period), notice: t('orders.msg.success.update')
     else
-      render :edit
+      redirect_to edit_period_order_path(@period, @order), notice: t('orders.msg.error.update')
     end
   end
 
   # DELETE /orders/1
   def destroy
-    @order.destroy
-    redirect_to period_orders_path(@period), notice: 'Order was successfully destroyed.'
+    if @order.destroy
+      redirect_to period_orders_path(@period), notice: t('orders.msg.success.destroy')
+    else
+      redirect_to period_orders_path(@period), notice: t('orders.msg.error.destroy')
+    end
   end
 
   private

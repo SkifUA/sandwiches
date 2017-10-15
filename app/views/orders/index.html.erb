@@ -1,41 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= provide(:title, t('orders.name')) %>
+  <h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
 
-<h1><%= t('orders.name') %> </h1>
-<h2><%= @period.start_date %> - <%= @period.finish_date %></h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dish</th>
-      <th>User</th>
-      <th>Quantity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= order.dish.name %></td>
-        <td><%= order.user.name %></td>
-        <td><%= order.quantity %></td>
-        <td><%= link_to 'Show', period_order_path(@period, order) %></td>
-        <td>
-          <% if can?(:update, order) %>
-            <%= link_to 'Edit', edit_period_order_path(@period, order) %>
-          <% end %>
-        </td>
-        <td>
-          <% if can?(:show, order) %>
-            <%= link_to 'Products for cook', order_products_path(@period, order.user_id) %>
-          <% end %>
-        </td>
+        <th><%= t('orders.tab.dish') %></th>
+        <th><%= t('orders.tab.user') %></th>
+        <th><%= t('orders.tab.quantity') %></th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.dish.name %></td>
+          <td><%= order.user.name %></td>
+          <td><%= order.quantity %></td>
+          <td>
+            <% if can?(:update, order) %>
+              <%= link_to edit_period_order_path(@period, order) do %>
+                  <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if can?(:show, order) %>
+              <%= link_to t('orders.view.report'), order_products_path(@period, order.user_id) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+<div class="container btn-container">
 <% if can?(:create, Order) %>
-  <%= link_to 'New Order', new_period_order_path(@period) %>
+  <%= render 'shared/link_default', { path: new_period_order_path(@period), title: t('orders.view.add') } %>
 <% end %>
+</div>
+

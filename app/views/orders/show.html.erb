@@ -1,26 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, t('orders.name')) %>
+<div class="container">
 
-<p>
-  <strong>Period:</strong>
-  <%= @order.period.start_date %> - <%= @order.period.finish_date %>
-</p>
+  <<p>
+    <strong>Period:</strong>
+    <%= @order.period.start_date %> - <%= @order.period.finish_date %>
+  </p>
 
-<p>
-  <strong>Cook:</strong>
-  <%= @order.user.name %>
-</p>
+  <p>
+    <strong>Cook:</strong>
+    <%= @order.user.name %>
+  </p>
 
-<p>
-  <strong>Dish:</strong>
-  <%= @order.dish.name %>
-</p>
+  <p>
+    <strong>Dish:</strong>
+    <%= @order.dish.name %>
+  </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @order.quantity %>
-</p>
+  <p>
+    <strong>Quantity:</strong>
+    <%= @order.quantity %>
+  </p>
+</div>
+<div class="container btn-container">
+  <% if can?(:create, Order) %>
+    <%= render 'shared/link_default', { path: edit_period_order_path(@period, @order), title: t('button.edit') } %>
+  <% end %>
+  <%= render 'shared/link_default', { path: period_orders_path(@period), title: t('button.back') } %>
+</div>
 
-<% if can?(:update, @order) %>
-  <%= link_to 'Edit', edit_period_order_path(@period, @order) %> |
-<% end %>
-<%= link_to 'Back', period_orders_path(@period) %>
