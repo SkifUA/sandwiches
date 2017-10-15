@@ -36,6 +36,15 @@ en:
       add: 'Add Ingredient'
   places:
     name: 'Places'
+    save: 'Place Save'
+    tab:
+      name: 'Name'
+      description: 'Description'
+      cook: 'Cook'
+    success:
+      create: 'Place was successfully created.'
+      update: 'Place was successfully updated.'
+      destroy: 'Place was successfully destroyed.'
     view:
       title_edit: 'Editing Place'
       title_new: 'New Place'

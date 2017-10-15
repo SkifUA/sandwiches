@@ -1,20 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <%= provide(:title, t('places.name')) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+  <h2>
+    <%= @place.name %>
+  </h2>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
+  <p>
+    <strong><%= t('places.tab.description') %>:</strong>
+    <%= @place.description %>
+  </p>
 
-<p>
-  <strong>Cook:</strong>
-  <%= @place.user.name %>
-</p>
-<% if can?(:update, @place)  %>
-  <%= link_to 'Edit', edit_place_path(@place) %> |
-<% end %>
-<%= link_to 'Back', places_path %>
+  <p>
+    <strong><%= t('places.tab.cook') %>:</strong>
+    <%= @place.user.name %>
+  </p>
+
+</div>
+
+<div class="container btn-container">
+  <% if can?(:update, @place) %>
+      <%= render 'shared/link_default', { path: edit_place_path(@place), title: t('button.edit') } %>
+  <% end %>
+  <%= render 'shared/link_default', { path: places_path, title: t('button.back') } %>
+</div>

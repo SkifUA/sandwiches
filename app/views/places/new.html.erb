@@ -1,5 +1,10 @@
-<h1><%= t('places.view.title_new') %></h1>
+<div class="container">
+  <%= provide(:title, t('places.name')) %>
 
-<%= render 'form', place: @place %>
+  <h1><%= t('places.view.title_new') %></h1>
 
-<%= link_to 'Back', places_path %>
+  <%= render 'form', place: @place %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: places_path, title: t('button.back') } %>
+</div>

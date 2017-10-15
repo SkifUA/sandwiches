@@ -2,7 +2,6 @@ class PlacesController < ApplicationController
   load_and_authorize_resource
 
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  before_action :get_cooks, only: [:new, :edit]
 
   # GET /places
   def index
@@ -27,7 +26,7 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
 
     if @place.save
-     redirect_to @place, notice: 'Place was successfully created.'
+     redirect_to @place, notice: t('places.success.create')
     else
       render :new
     end
@@ -36,7 +35,7 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   def update
     if @place.update(place_params)
-      redirect_to @place, notice: 'Place was successfully updated.'
+      redirect_to @place, notice: t('places.success.update')
     else
       render :edit
     end
@@ -45,7 +44,7 @@ class PlacesController < ApplicationController
   # DELETE /places/1
   def destroy
     @place.destroy
-    redirect_to places_url, notice: 'Place was successfully destroyed.'
+    redirect_to places_url, notice: t('places.success.destroy')
   end
 
   private
@@ -59,7 +58,4 @@ class PlacesController < ApplicationController
       params.require(:place).permit(:name, :description, :user_id)
     end
 
-    def get_cooks
-      @users = User.cooks
-    end
 end
