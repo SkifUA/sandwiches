@@ -37,8 +37,9 @@
 
 </div>
 <div class="container btn-container">
-<% if can?(:create, Order) %>
-  <%= render 'shared/link_default', { path: new_period_order_path(@period), title: t('orders.view.add') } %>
-<% end %>
+  <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
+  <% if can?(:create, Order) %>
+    <%= render 'shared/link_default', { path: new_period_order_path(@period), title: t('orders.view.add') } %>
+  <% end %>
 </div>
 

@@ -1,6 +1,13 @@
-<h1><%= t('periods.view.title_edit') %></h1>
+<div class="container">
+  <%= provide(:title, t('periods.name')) %>
+  <h1><%= t('periods.view.title_edit') %></h1>
 
-<%= render 'form', period: @period %>
+  <%= render 'form', period: @period %>
+</div>
 
-<%= link_to 'Show', @period %> |
-<%= link_to 'Back', periods_path %>
+
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: @period, title: t('button.show') } %>
+</div>
+

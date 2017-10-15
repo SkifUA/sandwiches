@@ -1,32 +1,32 @@
 <%= form_with(model: period, local: true) do |form| %>
+
   <% if period.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(period.errors.count, "error") %> prohibited this period from being saved:</h2>
-
-      <ul>
-      <% period.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% period.errors.full_messages.each do |error| %>
+          <%= alert_generator(error) %>
       <% end %>
-      </ul>
-    </div>
   <% end %>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :start_date %>
+          <%= form.date_select :start_date, id: :period_start_date, class: 'form-control' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date, id: :period_start_date %>
-  </div>
+        <div class="form-group">
+          <%= form.label :finish_date %>
+          <%= form.date_select :finish_date, id: :period_finish_date, class: 'form-control' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :finish_date %>
-    <%= form.date_select :finish_date, id: :period_finish_date %>
-  </div>
+        <div class="form-group">
+          <%= form.label :days %>
+          <%= form.number_field :days, id: :period_days, class: 'form-control' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :days %>
-    <%= form.number_field :days, id: :period_days %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        <div class="actions">
+          <%= form.submit t('periods.save'), class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
 <% end %>

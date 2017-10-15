@@ -62,10 +62,21 @@ en:
         destroy: 'Dish was successfully destroyed.'
   periods:
     name: 'Periods'
+    save: 'Save Period'
     view:
       title_edit: 'Editing Period'
       title_new: 'New Period'
-      link_report: 'Report'
+      title_show: 'Period'
+      link_orders: 'Orders this period'
+    msg:
+      success:
+        create: 'Period was successfully created.'
+        update: 'Period was successfully updated.'
+        destroy: 'Period was successfully destroyed.'
+    tab:
+      start_day: 'Start Day'
+      finish_day: 'Finish Day'
+      days: 'Days'
   orders:
     name: 'Orders'
     save: 'Save Order'
