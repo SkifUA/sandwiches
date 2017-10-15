@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <h3>Stock</h3>
+    <h3><%= t('reports.stocks') %></h3>
     <% stocks.each do |purchase| %>
         <div><%= purchase.product.name_with_unit %>: <%= purchase.stock_left %></div>
     <% end %>

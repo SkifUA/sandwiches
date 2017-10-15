@@ -1,17 +1,13 @@
 <div class="container">
   <%= provide(:title, t('reports.name')) %>
   <div>
-    <h1>Period: <%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %> </h1>
-    <%= link_to send_products_path(@period, params.fetch(:user_id)),
-                method: :post, class: 'link-btn' do %>
-        <span class="btn btn-primary"><%= t('reports.send_title') %></span>
-    <% end %>
-    <h2>For Cook: <%= @user_name %></h2>
+    <h1><%= t('periods.period') %>: <%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %> </h1>
+
+    <h2><%= t('reports.for_cook') %>: <%= @user_name %></h2>
 
     <%= render 'orders', orders: @orders%>
 
     <%= render 'products', products: @products %>
-
 
     <%= render 'stocks', stocks: @stocks %>
   </div>

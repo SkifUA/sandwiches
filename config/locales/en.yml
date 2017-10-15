@@ -100,6 +100,7 @@ en:
         destroy: 'Dish was successfully destroyed.'
   periods:
     name: 'Periods'
+    period: 'Period'
     save: 'Save Period'
     view:
       title_edit: 'Editing Period'
@@ -138,6 +139,9 @@ en:
         destroy: 'Order not destroyed.'
   reports:
     name: 'Reports'
+    for_cook: 'For cook'
+    stock: 'Stock'
+    stocks: 'Stocks'
     send_title: 'Send order to Sheets'
     sent:
       link: 'Check Google table, please'
