@@ -1,3 +1,5 @@
-<div>
-  <%= link_to 'Check table', "https://docs.google.com/spreadsheets/d/#{@spreadsheet_id}/edit#gid=0" %>
+<div class="container empty-container">
+  <%= provide(:title, t('reports.name')) %>
+  <h3><%= t('reports.sent.text') %></h3>
+  <%= link_to t('reports.sent.link'), "https://docs.google.com/spreadsheets/d/#{@spreadsheet_id}/edit#gid=0" %>
 </div>

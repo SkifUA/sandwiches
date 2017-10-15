@@ -1,20 +1,27 @@
-<div>
-  <%= link_to 'Send order to Sheets',
-              send_products_path(@period, params.fetch(:user_id)),
-              method: :post %>
-  <h1>Period: <%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %> </h1>
-  <h2>For Cook: <%= @user_name %></h2>
-  <h3>Orders</h3>
-  <% @orders.each do |order| %>
-      <div><%= order.dish.name %>: <%= order.quantity %></div>
-  <% end %>
-  <h3>Products</h3>
-  <% @products.each do |product| %>
-      <div><%= product.name %>: <%= product.quantity %></div>
-  <% end %>
-  <h3>Stock</h3>
-  <% @stock.each do |purchase| %>
-      <div><%= purchase.product.name_with_unit %>: <%= purchase.stock_left %></div>
+<div class="container">
+  <%= provide(:title, t('reports.name')) %>
+  <div>
+    <h1>Period: <%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %> </h1>
+    <%= link_to send_products_path(@period, params.fetch(:user_id)),
+                method: :post, class: 'link-btn' do %>
+        <span class="btn btn-primary"><%= t('reports.send_title') %></span>
+    <% end %>
+    <h2>For Cook: <%= @user_name %></h2>
+
+    <%= render 'orders', orders: @orders%>
+
+    <%= render 'products', products: @products %>
+
+
+    <%= render 'stocks', stocks: @stocks %>
+  </div>
+</div>
+
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: period_orders_path(@period), title: t('button.back') } %>
+  <%= link_to send_products_path(@period, params.fetch(:user_id)),
+              method: :post, class: 'link-btn' do %>
+      <span class="btn btn-primary"><%= t('reports.send_title') %></span>
   <% end %>
 </div>
-<%= link_to 'Back', period_orders_path(@period) %>
+

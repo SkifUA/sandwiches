@@ -135,3 +135,9 @@ en:
         create: 'Order not created.'
         update: 'Order not updated.'
         destroy: 'Order not destroyed.'
+  reports:
+    name: 'Reports'
+    send_title: 'Send order to Sheets'
+    sent:
+      link: 'Check Google table, please'
+      text: 'Data was sent to Google Table'

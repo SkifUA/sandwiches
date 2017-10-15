@@ -4,8 +4,8 @@ module CalculatorStocks
   def get_order_products
     @orders = Order.for_user_by_period(params.fetch(:user_id), params.fetch(:period_id))
     @user_name = User.find(params.fetch(:user_id)).name
-    @stock = Purchase.where(user_id: params.fetch(:user_id)).activated
-    @products = order_with_stock(@orders, @stock)
+    @stocks = Purchase.where(user_id: params.fetch(:user_id)).activated
+    @products = order_with_stock(@orders, @stocks)
   end
 
   def products_by_orders(orders)
@@ -22,10 +22,10 @@ module CalculatorStocks
     products
   end
 
-  def order_with_stock(orders, stock)
+  def order_with_stock(orders, stocks)
     products = products_by_orders(orders)
 
-    stock.each do |purchase|
+    stocks.each do |purchase|
       if products[purchase.product_id.to_s].present?
         products[purchase.product_id.to_s] -= (purchase.stock_left * percent_of_recycling(purchase)).to_i
       end
