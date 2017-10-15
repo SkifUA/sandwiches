@@ -1,12 +1,12 @@
 <%= provide(:title, t('ingredient.name')) %>
 <div class="container">
 <h1><%= t('ingredient.view.title_edit') %> <%= @dish.name %></h1>
-
+  <%= provide(:title, t('ingredient.name')) %>
 <table class="table">
   <thead>
     <tr>
-      <th>Product</th>
-      <th>Quantity</th>
+      <th><%= t('ingredient.tab.product') %></th>
+      <th><%= t('ingredient.tab.quantity') %></th>
       <th colspan="1"></th>
     </tr>
   </thead>
