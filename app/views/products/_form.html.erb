@@ -1,40 +1,39 @@
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% product.errors.full_messages.each do |error| %>
+      <%= alert_generator(error) %>
+    <% end %>
   <% end %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label t('products.name') %>
+        <%= form.text_field :name, id: :product_name, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
+      <div class="form-group">
+        <%= form.label t('products.tab.boiling') %>
+        <%= form.check_box :boiling, id: :product_boiling %>
+      </div>
 
-  <div class="field">
-    <%= form.label :boiling %>
-    <%= form.text_field :boiling, id: :product_boiling %>
-  </div>
+      <div class="form-group">
+        <%= form.label t('products.tab.percent') %>
+        <%= form.text_field :percent_of_recycling, id: :product_percent_of_recycling, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :percent_of_recycling %>
-    <%= form.text_field :percent_of_recycling, id: :product_percent_of_recycling %>
-  </div>
+      <div class="form-group">
+        <%= form.radio_button :measuring, 'weight' %>
+        <%= form.label :status, 'weight' %>
 
-  <div class="field">
-    <%= form.radio_button :measuring, 'weight' %>
-    <%= form.label :status, 'weight' %>
+        <%= form.radio_button :measuring, 'piece' %>
+        <%= form.label :status, 'piece' %>
+      </div>
 
-    <%= form.radio_button :measuring, 'piece' %>
-    <%= form.label :status, 'piece' %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions">
+        <%= form.submit t('products.save'), class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
   </div>
 <% end %>

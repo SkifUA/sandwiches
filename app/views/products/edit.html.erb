@@ -1,6 +1,13 @@
-<h1><%= t('places.view.title_edit') %></h1>
+<div class="container">
+  <%= provide(:title, t('products.name')) %>
 
-<%= render 'form', product: @product %>
+  <h1><%= t('places.view.title_edit') %></h1>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+  <%= render 'form', product: @product %>
+</div>
+
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: products_path, title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: @product, title: t('button.show') } %>
+</div>
+
