@@ -8,18 +8,21 @@
         <th><%= t('products.tab.name') %></th>
         <th><%= t('products.tab.boiling') %></th>
         <th><%= t('products.tab.percent') %></th>
-        <th><%= t('products.tab.measuring') %></th>
-        <th colspan="1"></th>
+        <th colspan="2"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= product.name %></td>
+          <td><%= product.name_with_unit %></td>
           <td><%= boiling_show(product.boiling) %></td>
           <td><%= product.percent_of_recycling %></td>
-          <td><%= product.measuring %></td>
+          <td>
+            <%= link_to product do %>
+                <i class="fa fa-file-text-o"></i>
+            <% end %>
+          </td>
           <td>
             <% if can?(:update, product) %>
               <%= link_to edit_product_path(product) do %>
