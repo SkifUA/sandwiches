@@ -3,7 +3,6 @@ class IngredientsController < ApplicationController
   before_action :get_dish
 
   # GET /ingredients
-  # GET /ingredients.json
   def index
     @ingredients = Ingredient.where(dish_id: @dish.id)
   end
