@@ -72,7 +72,7 @@ ru:
       bought: 'Закуплено'
       cost: 'Стоимость'
       left: 'Остаток'
-      left_finished: 'Остаток обработанногщ'
+      left_finished: 'Остаток обработанного'
       description: 'Описание'
       active: 'Активно'
     success:
