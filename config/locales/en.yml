@@ -112,6 +112,9 @@ en:
         create: 'Period was successfully created.'
         update: 'Period was successfully updated.'
         destroy: 'Period was successfully destroyed.'
+      invalid:
+        start_date: 'Start date must be after last Finish date'
+        finish_date: 'Finish date must be after Start date'
     tab:
       start_day: 'Start Day'
       finish_day: 'Finish Day'
