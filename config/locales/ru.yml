@@ -1,0 +1,149 @@
+ru:
+  home: 'Домой'
+  hello: "Привет мир"
+  currency: 'грн'
+  sign_up: 'Регистрация'
+  login: 'Вход'
+  logout: 'Выход'
+  button:
+    edit: 'Редактировать'
+    back: 'Назад'
+    show: 'Смотреть'
+    edit_ingredients: 'Редактировать ингредиенты'
+  confirm:
+    destroy: 'Вы уверены, что хочите удалить ето?'
+  devise:
+    omniauth_callbacks:
+      success: 'Вы авторизировались с помощь Google'
+  products:
+    name: 'Продукты'
+    save: 'Сохранить продукт'
+    success:
+      create: 'Продукт успешно создан.'
+      update: 'Продукт успешно исправлен.'
+      destroy: 'Продукт удален.'
+    tab:
+      name: 'Название'
+      boiling: 'Варить'
+      percent: 'Процент утилизации'
+      measuring: 'Единица измегения'
+    measuring:
+      weight: 'грамм'
+      piece: 'шт'
+    boiling:
+      yes: 'Да'
+      no: 'Нет'
+    view:
+      title_edit: 'Редактировать продукт'
+      title_new: 'Новый продукт'
+  ingredient:
+    name: 'Ингредиенты'
+    save: 'Сохранить ингредиент'
+    tab:
+      product: 'Продукт'
+      quantity: 'Количество'
+    validates:
+      unique: 'Этот продукт существует'
+    view:
+      title_edit: 'Добавление ингридиета к '
+      title_new: 'Новый ингредиент для '
+      add: 'Добавить ингредиент'
+  places:
+    name: 'Площадка'
+    save: 'Сохранить площадку'
+    tab:
+      name: 'Название'
+      description: 'Описание'
+      cook: 'Повар'
+    success:
+      create: 'Площадка успешно создана.'
+      update: 'Площадка успешно обновлена.'
+      destroy: 'Площадка удалена.'
+    view:
+      title_edit: 'Редактирование площадки'
+      title_new: 'Новая площадка'
+  purchases:
+    name: 'Закупка'
+    save: 'Сохранить закупку'
+    tab:
+      user: 'Повар'
+      product: 'Продукт'
+      date_purchase: 'Дата закупки'
+      bought: 'Закуплено'
+      cost: 'Стоимость'
+      left: 'Остаток'
+      left_finished: 'Остаток обработанногщ'
+      description: 'Описание'
+      active: 'Активно'
+    success:
+      create: 'Закупка успешно создана.'
+      update: 'Закупка успешно обновлена.'
+      destroy: 'Закупка удалена.'
+    view:
+      title_edit: 'Редактирование закупки'
+      title_new: 'Новая закупка'
+  dishes:
+    name: 'Меню'
+    save: 'Сохранить блюдо'
+    view:
+      title_edit: 'Редактирование блюда'
+      title_new: 'Новое блюдо'
+    tab:
+      name: 'Название'
+      image: 'Изображение'
+      description: 'Описание'
+      price: 'Цена'
+    msg:
+      success:
+        create: 'Блюдо успешно добавлено.'
+        update: 'Блюдо успешно обновлено.'
+        destroy: 'Блюдо удалено.'
+  periods:
+    name: 'Периоды'
+    save: 'Сохранить период'
+    view:
+      title_edit: 'Редактирование периода'
+      title_new: 'Новый период'
+      title_show: 'Периол'
+      link_orders: 'Заказ на период'
+    msg:
+      success:
+        create: 'Период успешно создан.'
+        update: 'Период успешно обновлен.'
+        destroy: 'Период удален.'
+    tab:
+      start_day: 'Начало периода'
+      finish_day: 'Конец периода'
+      days: 'Дней'
+  orders:
+    name: 'Заказ'
+    save: 'Сохранить заказ'
+    tab:
+      dish: 'Блюдо'
+      user: 'Повар'
+      quantity: 'Количество в день'
+    view:
+      title_edit: 'Редактирование заявки'
+      title_new: 'Новая заявка'
+      add: 'Добавить заявку'
+      report: 'Заявка на продукты для повара'
+    msg:
+      success:
+        create: 'Заявка успешно создана.'
+        update: 'заявка успешно обновлена.'
+        destroy: 'Заявка удалена.'
+      error:
+        create: 'Заявка не создана.'
+        update: 'Заявка не обновлена.'
+        destroy: 'Заявка не удалена.'
+  reports:
+    name: 'Отчеты'
+    send_title: 'Отправить отчет в таблицу'
+    sent:
+      link: 'Провеьте пожалуйста таблицу'
+      text: 'Данные были отправленны в Google таблицу'
+  pages:
+    home:
+      history:
+        title: 'Мы всегда рады нашим гостям'
+        text: 'Мы всегда рады нашим гостям, поэтому постоянно организовуем акции и дарим подарки'

@@ -1,6 +1,6 @@
 <%= provide(:title, t('ingredient.name')) %>
 <div class="container">
-  <h1>Editing Ingredient for <%= @dish.name %></h1>
+  <h1><%= t('ingredient.view.title_edit') %> <%= @dish.name %></h1>
 
   <%= form_with(model: @ingredient,
                 url: {action:"update",

@@ -1,18 +1,17 @@
 <%= provide(:title, t('ingredient.name')) %>
 <div class="container">
 
-  <p>
-    <strong><%= t('dishes.name') %>:</strong>
+  <h3>
     <%= @dish.name %>
-  </p>
+  </h3>
 
   <p>
-    <strong>Product:</strong>
+    <strong><%= t('ingredient.tab.product') %>: </strong>
     <%= @ingredient.product.name %>
   </p>
 
   <p>
-    <strong>Quantity:</strong>
+    <strong><%= t('ingredient.tab.quantity') %>: </strong>
     <%= @ingredient.quantity %>
   </p>
 

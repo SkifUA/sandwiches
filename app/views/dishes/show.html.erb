@@ -16,7 +16,7 @@
       <div class="col-md-4 agile-blog-grid-right">
         <h3><%= @dish.name %></h3>
         <div class="categories">
-          <h3>Ingredients:</h3>
+          <h3><%= t('ingredient.name') %>:</h3>
           <ul>
             <% @dish.ingredients.each do |ingredient| %>
               <li><b><%= ingredient.product.name_with_unit %> <%= ingredient.quantity %></b></li>
