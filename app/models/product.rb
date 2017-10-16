@@ -11,9 +11,9 @@ class Product < ApplicationRecord
 
   def unit
     if measuring == 'weight'
-      t('products.measuring.weight')
+      I18n.t('products.measuring.weight')
     else
-      t('products.measuring.piece')
+      I18n.t('products.measuring.piece')
     end
   end
 
