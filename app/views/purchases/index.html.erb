@@ -6,9 +6,10 @@
       <tr>
         <th><%= t('purchases.tab.user') %></th>
         <th><%= t('purchases.tab.product') %></th>
+        <th><%= t('purchases.tab.period') %></th>
         <th><%= t('purchases.tab.date_purchase') %></th>
         <th><%= t('purchases.tab.bought') %></th>
-        <th><%= t('purchases.tab.cost') %></th>
+        <th><%= t('purchases.tab.cost') %>, <%= t('currency') %></th>
         <th><%= t('purchases.tab.left') %></th>
         <th><%= t('purchases.tab.left_finished') %></th>
         <th><%= t('purchases.tab.description') %></th>
@@ -21,12 +22,13 @@
         <tr>
           <td><%= purchase.user.name %></td>
           <td><%= purchase.product.name_with_unit %></td>
+          <td><%= purchase.period.name %></td>
           <td><%= date_by_format(purchase.date_purchase) %></td>
           <td><%= purchase.bought %></td>
           <td><%= purchase.cost_float %></td>
           <td><%= purchase.left %></td>
           <td><%= purchase.left_finished %></td>
-          <td><%= purchase.description.truncate(80, separator: ' ') %></td>
+          <td><%= purchase.description.truncate(50, separator: ' ') %></td>
           <td>
             <%= link_to purchase do %>
               <i class="fa fa-file-text-o"></i>

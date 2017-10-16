@@ -11,43 +11,48 @@
       <%= render 'input_cook', form:form %>
 
       <div class="form-group">
-        <%= form.label :product_id %>
-        <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
-                                   {
-                                       include_blank: true
-                                   },
-                                   class: 'form-control'
-            )
+        <%= form.label t('purchases.tab.period') %>
+        <%= form.collection_select(:period_id, Period.last(3), :id, :name,
+                                   { include_blank: true },
+                                   class: 'form-control')
         %>
       </div>
 
       <div class="form-group">
-        <%= form.label :date_purchase %>
+        <%= form.label t('purchases.tab.product') %>
+        <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
+                                   { include_blank: true },
+                                   class: 'form-control')
+        %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label t('purchases.tab.date_purchase') %>
         <%= form.date_select :date_purchase, id: :purchase_date_purchase, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :bought %>
+        <%= form.label t('purchases.tab.bought') %>
         <%= form.number_field :bought, id: :purchase_bought, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :cost %>
+        <%= form.label t('purchases.tab.cost') %>
         <%= form.number_field :cost_float, id: :purchase_cost_float, step: 0.01, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :left %>
+        <%= form.label t('purchases.tab.left') %>
         <%= form.number_field :left, id: :purchase_left, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :left_finished %>
+        <%= form.label t('purchases.tab.left_finished') %>
         <%= form.number_field :left_finished, id: :purchase_left_finished, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= form.label :description %>
+        <%= form.label t('purchases.tab.description') %>
         <%= form.text_area :description, id: :place_description, class: 'form-control' %>
       </div>
 

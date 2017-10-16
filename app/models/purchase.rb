@@ -1,6 +1,7 @@
 class Purchase < ApplicationRecord
   belongs_to :user
   belongs_to :product
+  belongs_to :period
 
   attr_accessor :cost_float
 
@@ -8,9 +9,10 @@ class Purchase < ApplicationRecord
   before_save :to_cost
   after_initialize :to_cost_float
 
-  validates_presence_of :user_id, :product_id, :date_purchase
+  validates_presence_of :user_id, :product_id, :date_purchase, :period_id
 
   scope :activated, -> () { where(active: true) }
+  scope :other_period, -> (period_id) { where.not(period_id: period_id) }
   scope :current_product, -> (product_id, user_id) { where(product_id: product_id, user_id: user_id ) }
   scope :deactivate, -> () { update(active: false) }
 
@@ -40,7 +42,7 @@ class Purchase < ApplicationRecord
   end
 
   def deactivate_old
-    Purchase.activated.current_product(product_id, user_id).deactivate
+    Purchase.activated.other_period(period_id).current_product(product_id, user_id).deactivate
   end
 
 end

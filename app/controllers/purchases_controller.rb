@@ -6,7 +6,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases
   def index
-    @purchases = Purchase.activated.includes(:product, :user)
+    @purchases = Purchase.activated.includes(:product, :user, :period)
   end
 
   # GET /purchases/1
@@ -56,7 +56,15 @@ class PurchasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def purchase_params
-      params.require(:purchase).permit(:user_id, :product_id, :date_purchase, :bought, :cost_float, :left, :left_finished, :description)
+      params.require(:purchase).permit(:user_id,
+                                       :product_id,
+                                       :period_id,
+                                       :date_purchase,
+                                       :bought,
+                                       :cost_float,
+                                       :left,
+                                       :left_finished,
+                                       :description)
     end
 
     def get_products

@@ -1,41 +1,46 @@
 <div class="container">
   <%= provide(:title, t('purchases.name')) %>
   <h3>
-    <strong>Date purchase:</strong>
+    <strong><%= t('purchases.tab.date_purchase') %></strong>
     <%= date_by_format(@purchase.date_purchase) %>
   </h3>
   <p>
-    <strong>User:</strong>
+    <strong><%= t('purchases.tab.user') %>: </strong>
     <%= @purchase.user.name %>
   </p>
 
   <p>
-    <strong>Product:</strong>
+    <strong><%= t('purchases.tab.product') %>: </strong>
     <%= @purchase.product.name_with_unit %>
   </p>
 
   <p>
-    <strong>Bought:</strong>
+    <strong><%= t('purchases.tab.period') %>: </strong>
+    <%= @purchase.period.name %>
+  </p>
+
+  <p>
+    <strong><%= t('purchases.tab.bought') %>: </strong>
     <%= @purchase.bought %>
   </p>
 
   <p>
-    <strong>Cost:</strong>
+    <strong><%= t('purchases.tab.cost') %>: </strong>
     <%= @purchase.cost_float %>
   </p>
 
   <p>
-    <strong>Left:</strong>
+    <strong><%= t('purchases.tab.left') %>: </strong>
     <%= @purchase.left %>
   </p>
 
   <p>
-    <strong>Left finished:</strong>
+    <strong><%= t('purchases.tab.left_finished') %>: </strong>
     <%= @purchase.left_finished %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong><%= t('purchases.tab.description') %>: </strong>
     <%= @purchase.description %>
   </p>
 </div>

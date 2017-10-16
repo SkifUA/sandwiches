@@ -68,6 +68,7 @@ ru:
     tab:
       user: 'Повар'
       product: 'Продукт'
+      period: 'Период'
       date_purchase: 'Дата закупки'
       bought: 'Закуплено'
       cost: 'Стоимость'

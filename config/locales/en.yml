@@ -68,6 +68,7 @@ en:
     tab:
       user: 'Cook'
       product: 'Product'
+      period: 'Period'
       date_purchase: 'Date purchase'
       bought: 'Bought'
       cost: 'Cost'
