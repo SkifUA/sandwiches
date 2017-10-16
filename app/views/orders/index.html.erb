@@ -5,6 +5,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         <th><%= t('orders.tab.dish') %></th>
         <th><%= t('orders.tab.user') %></th>
         <th><%= t('orders.tab.quantity') %></th>
@@ -15,6 +16,7 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
+          <td><%= image_tag(dish_img(order.dish.image.thumb, 'thumb')) %></td>
           <td><%= order.dish.name %></td>
           <td><%= order.user.name %></td>
           <td><%= order.quantity %></td>
