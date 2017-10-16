@@ -19,34 +19,34 @@ en:
       text: 'Our services Our services Our services Our services Our services Our services Our services Our services'
       slides:
         slide1:
-          img: 's1.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s1.jpg'
           title: 'slide1'
           text: 'slide1 slide1'
         slide2:
-          img: 's2.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s2.jpg'
           title: 'slide2'
           text: 'slide2 slide2'
         slide3:
-          img: 's3.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s3.jpg'
           title: 'slide3'
           text: 'slide3 slide3'
         slide4:
-          img: 's4.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s4.jpg'
           title: 'slide4'
           text: 'slide4 slide4'
         slide5:
-          img: 's5.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s5.jpg'
           title: 'slide5'
           text: 'slide5 slide5'
         slide6:
-          img: 's6.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s6.jpg'
           title: 'slide6'
           text: 'slide6 slide6'
         slide7:
-          img: 's7.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s7.jpg'
           title: 'slide7'
           text: 'slide7 slide7'
         slide8:
-          img: 's1.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s1.jpg'
           title: 'slide8'
           text: 'slide8 slide8'

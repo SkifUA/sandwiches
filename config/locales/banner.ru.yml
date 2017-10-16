@@ -19,34 +19,34 @@ ru:
       text: 'Наши продукты Наши продукты Наши продукты Наши продукты Наши продукты Наши продукты Наши продукты Наши продукты Наши продукты'
       slides:
         slide1:
-          img: 's1.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s1.jpg'
           title: 'слайд1'
           text: 'слайд1 слайд1'
         slide2:
-          img: 's2.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s2.jpg'
           title: 'слайд2'
           text: 'слайд2 слайд2'
         slide3:
-          img: 's3.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s3.jpg'
           title: 'слайд3'
           text: 'слайд3 слайд3'
         slide4:
-          img: 's4.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s4.jpg'
           title: 'слайд4'
           text: 'слайд4 слайд4'
         slide5:
-          img: 's5.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s5.jpg'
           title: 'слайд5'
           text: 'слайд5 слайд5'
         slide6:
-          img: 's6.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s6.jpg'
           title: 'слайд6'
           text: 'слайд6 слайд6'
         slide7:
-          img: 's7.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s7.jpg'
           title: 'слайд7'
           text: 'слайд7 слайд7'
         slide8:
-          img: 's1.jpg'
+          img: 'https://s3.eu-central-1.amazonaws.com/frans-ua/images/services/s1.jpg'
           title: 'слайд8'
           text: 'слайд8 слайд8'
