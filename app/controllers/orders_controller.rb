@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
-      redirect_to period_order_path(@period, @order), notice: t('orders.msg.success.create')
+      redirect_to period_orders_path(@period), notice: t('orders.msg.success.create')
     else
       redirect_to new_period_order_path(@period), notice: t('orders.msg.error.create')
     end

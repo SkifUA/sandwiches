@@ -12,6 +12,7 @@ module CalculatorStocks
     products = {}
     orders.each do |order|
       order.dish.ingredients.each do |ingredient|
+        next unless ingredient.product.report_tab?
         if products[ingredient.product_id.to_s].nil?
           products[ingredient.product_id.to_s] = (ingredient.quantity * order.quantity * percent_of_recycling(ingredient) * @period.days).to_i
         else

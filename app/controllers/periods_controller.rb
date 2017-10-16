@@ -26,7 +26,7 @@ class PeriodsController < ApplicationController
     @period = Period.new(period_params)
 
     if @period.save
-      redirect_to @period, notice: t('periods.msg.success.create')
+      redirect_to periods_path, notice: t('periods.msg.success.create')
     else
       render :new
     end
