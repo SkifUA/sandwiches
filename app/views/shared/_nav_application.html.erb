@@ -37,7 +37,8 @@
         <% if current_user %>
           <li>
             <%= link_to edit_user_registration_path, class: "#{check_active(edit_user_registration_path)}" do %>
-              <i class="fa fa-user"></i><%= current_user.name %>
+                <%= fa_icon('user') %>
+                <%= current_user.name %>
             <% end %>
           </li>
         <% end %>

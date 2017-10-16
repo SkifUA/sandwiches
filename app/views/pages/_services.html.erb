@@ -9,13 +9,13 @@
   <div class="services-grids">
 
     <div id="owl-demo" class="owl-carousel owl-theme">
-      <%#= t('banner.services.slides').to_h.first %>
+
       <% t('banner.services.slides').each do |slide|%>
         <div class="item">
           <div class="services-grid-info">
             <%= image_tag slide[1].to_h[:img] %>
             <div class="services-grid-caption">
-              <i class="fa fa-coffee" aria-hidden="true"></i>
+              <%= fa_icon('fa-coffee') %>
               <h4><%= slide[1].to_h[:title] %></h4>
               <p><%= slide[1].to_h[:text] %></p>
             </div>
