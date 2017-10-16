@@ -11,18 +11,20 @@
       </figcaption>
     </div>
   </div>
-  <div class="col-md-6 w3ls-special-img"
-       style="background: url(<%= dish_img(item[1].image.middle) %>) no-repeat 0px 0px">
-    <div class="wpf-demo-6">
-      <div class="w3ls-special-text menu-text">
-        <p><%= item[1].price %><sub><%= t('currency') %></sub></p>
+  <% if item[1].present? %>
+    <div class="col-md-6 w3ls-special-img"
+         style="background: url(<%= dish_img(item[1].image.middle) %>) no-repeat 0px 0px">
+      <div class="wpf-demo-6">
+        <div class="w3ls-special-text menu-text">
+          <p><%= item[1].price %><sub><%= t('currency') %></sub></p>
+        </div>
+        <figcaption class="view-caption">
+          <h4><%= item[1].name %></h4>
+          <%= link_to t('button.show'), dish_path(item[1]) %>
+        </figcaption>
       </div>
-      <figcaption class="view-caption">
-        <h4><%= item[1].name %></h4>
-        <%= link_to t('button.show'), dish_path(item[1]) %>
-      </figcaption>
+      <div class="clearfix"> </div>
     </div>
-    <div class="clearfix"> </div>
-  </div>
+  <% end %>
   <div class="clearfix"> </div>
 </div>
