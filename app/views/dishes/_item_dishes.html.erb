@@ -1,6 +1,6 @@
 <div class="col-md-6 w3l-special-grid">
   <div class="col-md-6 w3ls-special-img"
-       style="background: url(<%= dish_img(item[0].image.middle) %>) no-repeat 0px 0px">
+       style="background: url(<%= dish_img(item[0].image.middle, 'middle') %>) no-repeat 0px 0px">
     <div class="wpf-demo-6">
       <div class="w3ls-special-text">
         <p><%= item[0].price %><sub><%= t('currency') %></sub></p>
@@ -13,7 +13,7 @@
   </div>
   <% if item[1].present? %>
     <div class="col-md-6 w3ls-special-img"
-         style="background: url(<%= dish_img(item[1].image.middle) %>) no-repeat 0px 0px">
+         style="background: url(<%= dish_img(item[1].image.middle, 'middle') %>) no-repeat 0px 0px">
       <div class="wpf-demo-6">
         <div class="w3ls-special-text menu-text">
           <p><%= item[1].price %><sub><%= t('currency') %></sub></p>
