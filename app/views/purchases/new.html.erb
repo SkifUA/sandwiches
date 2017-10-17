@@ -1,11 +1,20 @@
 <div class="container">
   <%= provide(:title, t('purchases.name')) %>
-
   <h1><%= t('purchases.view.title_new') %></h1>
 
-  <%= render 'form', purchase: @purchase %>
+  <h4>
+    <strong><%= t('remainders.tab.period') %>: </strong>
+    <%= @period.name %>
+  </h4>
+  <%= form_with(model: @purchase,
+                url: {action:"create",
+                      controller: "purchases",
+                      period_id: @period.id},
+                method: :post) do |form| %>
+    <%= render 'form', { form: form, purchase: @purchase } %>
+  <% end %>
 </div>
 <div class="container btn-container">
-  <%= render 'shared/link_default', { path: purchases_path, title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: period_purchases_path(@period), title: t('button.back') } %>
 </div>
 

@@ -75,7 +75,7 @@ ru:
       cost: 'Стоимость'
       left: 'Остаток'
       left_finished: 'Остаток обработанного'
-      description: 'Описание'
+      description: 'Коментарии'
       active: 'Активно'
     success:
       create: 'Закупка успешно создана.'

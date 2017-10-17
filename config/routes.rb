@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/for-cook/:user_id', to: 'orders#for_cook', as: 'for_cook'
     resources :orders
     resources :remainders
+    resources :purchases
   end
   resources :purchases
   resources :places

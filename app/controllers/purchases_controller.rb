@@ -2,11 +2,11 @@ class PurchasesController < ApplicationController
   load_and_authorize_resource
 
   before_action :set_purchase, only: [:show, :edit, :update, :destroy]
-  before_action :get_products, only: [:new, :edit]
+  before_action :get_period
 
   # GET /purchases
   def index
-    @purchases = Purchase.activated.includes(:product, :user, :period)
+    @purchases = Purchase.where(period_id: params.fetch(:period_id)).includes(:product, :user)
   end
 
   # GET /purchases/1
@@ -27,7 +27,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
 
     if @purchase.save
-      redirect_to @purchase, notice: 'Purchase was successfully created.'
+      redirect_to period_purchases_path(@period), notice: 'Purchase was successfully created.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class PurchasesController < ApplicationController
   # PATCH/PUT /purchases/1
   def update
     if @purchase.update(purchase_params)
-      redirect_to @purchase, notice: 'Purchase was successfully updated.'
+      redirect_to period_purchases_path(@period), notice: 'Purchase was successfully updated.'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class PurchasesController < ApplicationController
   # DELETE /purchases/1
   def destroy
     @purchase.destroy
-    redirect_to purchases_url, notice: 'Purchase was successfully destroyed.'
+    redirect_to period_purchases_path(@period), notice: 'Purchase was successfully destroyed.'
   end
 
   private
@@ -62,12 +62,11 @@ class PurchasesController < ApplicationController
                                        :date_purchase,
                                        :bought,
                                        :cost_float,
-                                       :left,
-                                       :left_finished,
                                        :description)
     end
 
-    def get_products
-      @products = Product.all.order(:name)
+    def get_period
+      @period = Period.find(params.fetch(:period_id))
     end
+
 end

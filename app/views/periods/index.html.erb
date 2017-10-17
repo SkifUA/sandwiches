@@ -4,8 +4,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th><%= t('periods.tab.start_day') %></th>
-        <th><%= t('periods.tab.finish_day') %></th>
+        <th><%= t('periods.name') %></th>
         <th><%= t('periods.tab.days') %></th>
         <th colspan="3"></th>
       </tr>
@@ -14,22 +13,24 @@
     <tbody>
       <% @periods.each do |period| %>
         <tr>
-          <td><%= date_by_format(period.start_date) %></td>
-          <td><%= date_by_format(period.finish_date) %></td>
+          <td><%= period.name %></td>
           <td><%= period.days %></td>
-
-          <td>
-            <% if can?(:update, period) %>
-              <%= link_to edit_period_path(period) do %>
-                <i class="fa fa-pencil-square-o"></i>
-              <% end %>
-            <% end %>
-          </td>
           <td>
             <%= link_to t('periods.view.link_orders'), period_orders_path(period) %>
           </td>
+
+          <td>
+            <%= link_to t('purchases.name'), period_purchases_path(period) %>
+          </td>
           <td>
             <%= link_to t('remainders.name'), period_remainders_path(period) %>
+          </td>
+          <td>
+            <% if can?(:update, period) %>
+                <%= link_to edit_period_path(period) do %>
+                    <i class="fa fa-pencil-square-o"></i>
+                <% end %>
+            <% end %>
           </td>
         </tr>
       <% end %>
