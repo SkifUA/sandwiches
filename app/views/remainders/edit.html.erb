@@ -2,7 +2,7 @@
   <%= provide(:title, t('remainders.name')) %>
   <h1><%= t('remainders.view.title_edit') %></h1>
   <h4>
-    <strong><%= t('remainders.tab.period') %> </strong>
+    <strong><%= t('remainders.tab.period') %>: </strong>
     <%= @period.name %>
   </h4>
   <%= form_with(model: @remainder,
