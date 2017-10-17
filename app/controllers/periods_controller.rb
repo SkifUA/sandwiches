@@ -1,5 +1,6 @@
 class PeriodsController < ApplicationController
   load_and_authorize_resource
+  include DateForPeriods
 
   before_action :set_period, only: [:show, :edit, :update, :destroy]
 
@@ -14,7 +15,7 @@ class PeriodsController < ApplicationController
 
   # GET /periods/new
   def new
-    @period = Period.new
+    @period = default_period
   end
 
   # GET /periods/1/edit
