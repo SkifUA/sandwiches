@@ -1,0 +1,21 @@
+<div class="container">
+  <%= provide(:title, t('remainders.name')) %>
+  <h1><%= t('remainders.view.title_edit') %></h1>
+  <h4>
+    <strong><%= t('remainders.tab.period') %> </strong>
+    <%= @period.name %>
+  </h4>
+  <%= form_with(model: @remainder,
+                url: {action:"update",
+                      controller: "remainders",
+                      period_id: @period.id},
+                method: :patch) do |form| %>
+    <%= render 'form', { form:form, remainder: @remainder } %>
+  <% end %>
+</div>
+
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: period_remainders_path(@period) , title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: period_remainder_path(@period, @remainder), title: t('button.show') } %>
+</div>
+

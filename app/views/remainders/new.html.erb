@@ -1,0 +1,19 @@
+<div class="container">
+  <%= provide(:title, t('remainders.name')) %>
+  <h1><%= t('remainders.view.title_new') %></h1>
+  <h4>
+    <strong><%= t('remainders.tab.period') %> </strong>
+    <%= @period.name %>
+  </h4>
+  <%= form_with(model: @remainder,
+                url: {action:"create",
+                      controller: "remainders",
+                      period_id: @period.id},
+                method: :post) do |form| %>
+
+    <%= render 'form', { form: form, remainder: @remainder } %>
+  <% end %>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: period_remainders_path(@period), title: t('button.back') } %>
+</div>

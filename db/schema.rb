@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016181704) do
+ActiveRecord::Schema.define(version: 20171017065340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,22 @@ ActiveRecord::Schema.define(version: 20171016181704) do
     t.datetime "updated_at", null: false
     t.bigint "period_id"
     t.index ["period_id"], name: "index_purchases_on_period_id"
+  end
+
+  create_table "remainders", force: :cascade do |t|
+    t.bigint "period_id"
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.integer "left", default: 0
+    t.integer "left_finished", default: 0
+    t.text "description"
+    t.date "checking_date"
+    t.boolean "current", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["period_id"], name: "index_remainders_on_period_id"
+    t.index ["product_id"], name: "index_remainders_on_product_id"
+    t.index ["user_id"], name: "index_remainders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many :ingredients, dependent: :destroy
   has_many :dishes, through: :ingredients
   has_many :purchases
+  has_many :remainders
 
   before_create :default_percent_of_recycling
   enum measuring: { weight: 1, piece: 2 }

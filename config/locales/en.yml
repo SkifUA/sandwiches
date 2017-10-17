@@ -141,6 +141,29 @@ en:
         create: 'Order not created.'
         update: 'Order not updated.'
         destroy: 'Order not destroyed.'
+  remainders:
+    name: 'Remainders'
+    save: 'Save Remainders'
+    tab:
+      period: 'Period'
+      user: 'Cook'
+      product: 'Product'
+      left: 'Left'
+      left_finished: 'Left finished'
+      description: 'Description'
+      checking_date: 'Date'
+    view:
+      title_edit: 'Editing Remainder'
+      title_new: 'New Remainder'
+      add: 'Add Remainder'
+    msg:
+      success:
+        create: 'Remainder was successfully created.'
+        update: 'Remainder was successfully updated.'
+        destroy: 'Remainder was successfully destroyed.'
+      error:
+        create: 'Remainder not created.'
+        update: 'Remainder not updated.'
   reports:
     name: 'Reports'
     for_cook: 'For cook'

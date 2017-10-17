@@ -1,0 +1,48 @@
+<% if remainder.errors.any? %>
+    <% remainder.errors.full_messages.each do |error| %>
+        <%= alert_generator(error) %>
+    <% end %>
+<% end %>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <%= form.hidden_field :period_id, id: :remainder_period_id, value: @period.id %>
+
+    <%= render 'input_cook', form:form %>
+    <div class="form-group">
+      <%= form.label t('remainders.tab.checking_date') %>
+      <%= form.date_select :checking_date, id: :remainder_checking_date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label t('remainders.tab.product') %>
+      <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
+                                 { include_blank: true,
+                                   id: :remainder_product },
+                                 class: 'form-control')
+      %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label t('remainders.tab.left') %>
+      <%= form.number_field :left, id: :remainder_left, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label t('remainders.tab.left_finished') %>
+      <%= form.number_field :left_finished, id: :remainders_left_finished, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label t('remainders.tab.description') %>
+      <%= form.text_area :description, id: :remainder_description, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit t('remainders.save'), class: 'btn btn-primary btn-block' %>
+    </div>
+
+  </div>
+  <div class="col-md-3"></div>
+</div>

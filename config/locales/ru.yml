@@ -141,6 +141,29 @@ ru:
         create: 'Заявка не создана.'
         update: 'Заявка не обновлена.'
         destroy: 'Заявка не удалена.'
+  remainders:
+    name: 'Остатки'
+    save: 'Сохранить остатки'
+    tab:
+      period: 'Период'
+      user: 'Повар'
+      product: 'Продукт'
+      left: 'Осталось'
+      left_finished: 'Осталось обработанного'
+      description: 'Описание'
+      checking_date: 'Дата'
+    view:
+      title_edit: 'Редактирование остатка'
+      title_new: 'Новый остаток'
+      add: 'Добавить остаток'
+    msg:
+      success:
+        create: 'Остаток успешно создан.'
+        update: 'Остаток успешно обновлен.'
+        destroy: 'Остаток удален.'
+      error:
+        create: 'Остаток не создан.'
+        update: 'Остаток обновлен.'
   reports:
     name: 'Отчеты'
     for_cook: 'Для повара'

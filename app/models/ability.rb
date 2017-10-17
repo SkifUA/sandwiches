@@ -40,6 +40,7 @@ class Ability
       can :read, Ingredient
       can :read, Order, user_id: user.id
       can :manage, Purchase, user_id: user.id
+      can :manage, Remainder, user_id: user.id
     else
       can :read, Dish
     end

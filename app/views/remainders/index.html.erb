@@ -1,0 +1,54 @@
+<div class="container empty-container">
+  <%= provide(:title, t('remainders.name')) %>
+  <h3><%= t('remainders.tab.period') %>: <%= @period.name %></h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <% if current_user.admin? %>
+        <th><%= t('remainders.tab.user') %></th>
+      <% end %>
+      <th><%= t('remainders.tab.product') %></th>
+      <th><%= t('remainders.tab.checking_date') %></th>
+      <th><%= t('remainders.tab.left') %></th>
+      <th><%= t('remainders.tab.left_finished') %></th>
+      <th><%= t('remainders.tab.description') %></th>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @remainders.each do |remainder| %>
+        <tr>
+          <% if current_user.admin? %>
+            <td><%= remainder.user.name %></td>
+          <% end %>
+          <td><%= remainder.product.name_with_unit %></td>
+          <td><%= date_by_format(remainder.checking_date) %></td>
+          <td><%= remainder.left %></td>
+          <td><%= remainder.left_finished %></td>
+          <td><%= remainder.description.truncate(50, separator: ' ') %></td>
+          <td>
+            <%= link_to period_remainder_path(@period, remainder) do %>
+                <i class="fa fa-file-text-o"></i>
+            <% end %>
+          </td>
+          <td>
+            <% if can?(:update, remainder) && remainder.current?  %>
+              <%= link_to edit_period_remainder_path(@period, remainder) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            <% end %>
+          </td>
+
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="container btn-container">
+  <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
+  <% if can?(:create, Purchase) %>
+    <%= render 'shared/link_default', { path: new_period_remainder_path(@period), title: t('remainders.view.add') } %>
+  <% end %>
+</div>
+
