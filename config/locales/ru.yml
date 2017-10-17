@@ -1,5 +1,6 @@
 ru:
   home: 'Домой'
+  reports_link: 'Отчеты'
   hello: "Привет мир"
   currency: 'грн'
   sign_up: 'Регистрация'
