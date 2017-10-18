@@ -25,6 +25,7 @@ class GoogleServiceSheets
   def update(objects, period)
     rows = [["#{period.start_date} - #{period.finish_date}", "#{period.days} days"]]
     objects.each { |object| rows << row_for_sheets(object) }
+    rows = add_empty_rows(rows)
 
     range = "#{@name_page}!A2:B#{rows.count + 1}"
     value_range_object = {
@@ -47,5 +48,10 @@ class GoogleServiceSheets
 
   def row_for_sheets(object)
     [object.name, object.quantity]
+  end
+
+  def add_empty_rows(rows)
+    15.times { rows << ['',''] }
+    rows
   end
 end
