@@ -6,6 +6,7 @@ class GoogleServiceSheets
     @spreadsheet_id = sheets_id
     @secrets = GoogleClientSecrets.secrets(user)
     @name_page = name_page
+    @user = user
   end
 
   def service
@@ -23,7 +24,8 @@ class GoogleServiceSheets
   end
 
   def update(objects, period)
-    rows = [["#{period.start_date} - #{period.finish_date}", "#{period.days} days"]]
+    rows = [[@user.name,'']]
+    rows << ["#{period.start_date} - #{period.finish_date}", "#{period.days} days"]
     objects.each { |object| rows << row_for_sheets(object) }
     rows = add_empty_rows(rows)
 
@@ -51,7 +53,7 @@ class GoogleServiceSheets
   end
 
   def add_empty_rows(rows)
-    15.times { rows << ['',''] }
+    15.times { rows << ['2',''] }
     rows
   end
 end

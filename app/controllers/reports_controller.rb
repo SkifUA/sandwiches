@@ -11,7 +11,10 @@ class ReportsController < ApplicationController
       redirect_back fallback_location: periods_path, notice: t('reports.msg.error.table_not_found') and return
     end
     get_order_products
-    google_sheets_service
+    user = User.find(params.fetch(:user_id))
+    google_sheets_service(user)
+
+    # TODO implemented copy lists for periods
     # google_script_service
     # @google_scripts.script
     begin
@@ -33,11 +36,11 @@ class ReportsController < ApplicationController
   end
 
 
-  def google_sheets_service
-    @google_sheets = GoogleServiceSheets.new(current_user, current_user.spreadsheet_id)
+  def google_sheets_service(user)
+    @google_sheets = GoogleServiceSheets.new(current_user, user)
   end
-
-  def google_script_service
-    @google_scripts = GoogleServiceScript.new(current_user, current_user.spreadsheet_id)
-  end
+  # TODO
+  # def google_script_service
+  #   @google_scripts = GoogleServiceScript.new(current_user, current_user.spreadsheet_id)
+  # end
 end
