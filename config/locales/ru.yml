@@ -108,7 +108,7 @@ ru:
       title_edit: 'Редактирование периода'
       title_new: 'Новый период'
       title_show: 'Периол'
-      link_orders: 'Заказ на период'
+      link_orders: 'Заказ'
     msg:
       success:
         create: 'Период успешно создан.'
