@@ -24,13 +24,6 @@ class Purchase < ApplicationRecord
     end
   end
 
-  def stock_left
-    return nil unless active?
-    stock = (bought + left) * (100 - product.percent_of_recycling) / 100
-    stock += left_finished if product.boiling?
-    stock
-  end
-
   private
 
   def to_cost_float

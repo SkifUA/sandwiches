@@ -32,7 +32,7 @@
 <br>
 </div>
 <div class="container btn-container">
-  <%= render 'shared/link_default', { path: dish_path(@dish), title: t('button.back') } %>
+  <%= render 'shared/link_default', { path: _back_url, title: t('button.back') } %>
   <%= render 'shared/link_default', { path: new_dish_ingredient_path(@dish), title: t('ingredient.view.add') } %>
 </div>
 

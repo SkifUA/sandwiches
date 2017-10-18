@@ -3,7 +3,10 @@ class ReportsController < ApplicationController
   before_action :get_period, only:[:order_products, :send_order_products]
 
   def order_products
-    get_order_products
+    @orders = Order.for_user_by_period(params.fetch(:user_id), params.fetch(:period_id))
+    @user_name = User.find(params.fetch(:user_id)).name
+    @remainders = Remainder.for_the_period(params.fetch(:user_id), params.fetch(:period_id)).currents_true
+    @products = products_with_remainders(@orders, @remainders)
   end
 
   def send_order_products

@@ -17,7 +17,11 @@
       <% @orders.each do |order| %>
         <tr>
           <td><%= image_tag(dish_img(order.dish.image.thumb, 'thumb')) %></td>
-          <td><%= order.dish.name %></td>
+          <td>
+            <%= link_to dish_ingredients_path(order.dish.id) do %>
+              <%= order.dish.name %>
+            <% end %>
+          </td>
           <td><%= order.user.name %></td>
           <td><%= order.quantity %></td>
           <td>
