@@ -176,7 +176,7 @@ ru:
       text: 'Данные были отправленны в Google таблицу'
     msg:
       error:
-        table_not_found: 'Не найдена ключ для таблицы'
+        table_not_found: 'Не найден ключ для таблицы'
         not_sent: 'Таблица не обновлена'
   pages:
     home:
