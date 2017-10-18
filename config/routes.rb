@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'reports/order-products/:period_id/:user_id', to: 'reports#order_products', as: 'order_products'
 
   post 'reports/send-order-products/:period_id/:user_id', to: 'reports#send_order_products', as: 'send_products'
-  get 'reports/success', to: 'reports#success'
+  get 'reports/success/:spreadsheet_id', to: 'reports#success'
   resources :periods do
     get '/for-cook/:user_id', to: 'orders#for_cook', as: 'for_cook'
     resources :orders

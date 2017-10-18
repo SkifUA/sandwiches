@@ -23,11 +23,11 @@ class ReportsController < ApplicationController
       redirect_back fallback_location: periods_path, notice: t('reports.msg.error.not_sent') and return
     end
 
-    redirect_to reports_success_path
+    redirect_to reports_success_path(user.spreadsheet_id)
   end
 
   def success
-    @spreadsheet_id = ENV['SHEETS_PRODUCT_ID']
+    @spreadsheet_id = params.fetch('spreadsheet_id')
   end
 
   private
