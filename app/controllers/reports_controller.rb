@@ -11,19 +11,17 @@ class ReportsController < ApplicationController
       redirect_back fallback_location: periods_path, notice: t('reports.msg.error.table_not_found') and return
     end
     get_order_products
-    user = User.find(params.fetch(:user_id))
-    google_sheets_service(user)
-
-    # TODO implemented copy lists for periods
+    google_sheets_service
+    cook = User.find(params.fetch(:user_id))
     # google_script_service
     # @google_scripts.script
     begin
-      @google_sheets.update(@products, @period)
+      @google_sheets.update(cook,@products, @period)
     rescue
       redirect_back fallback_location: periods_path, notice: t('reports.msg.error.not_sent') and return
     end
 
-    redirect_to reports_success_path(user.spreadsheet_id)
+    redirect_to report_success_path(current_user.spreadsheet_id)
   end
 
   def success
@@ -35,9 +33,8 @@ class ReportsController < ApplicationController
     @period = Period.find(params.fetch(:period_id))
   end
 
-
-  def google_sheets_service(user)
-    @google_sheets = GoogleServiceSheets.new(current_user, user)
+  def google_sheets_service
+    @google_sheets = GoogleServiceSheets.new(current_user, current_user.spreadsheet_id)
   end
   # TODO
   # def google_script_service

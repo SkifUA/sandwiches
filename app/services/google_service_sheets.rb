@@ -23,8 +23,8 @@ class GoogleServiceSheets
     puts response.to_json
   end
 
-  def update(objects, period)
-    rows = [[@user.name,'']]
+  def update(user, objects, period)
+    rows = [[user.name,'']]
     rows << ["#{period.start_date} - #{period.finish_date}", "#{period.days} days"]
     objects.each { |object| rows << row_for_sheets(object) }
     rows = add_empty_rows(rows)
@@ -53,7 +53,7 @@ class GoogleServiceSheets
   end
 
   def add_empty_rows(rows)
-    15.times { rows << ['2',''] }
+    15.times { rows << ['',''] }
     rows
   end
 end
