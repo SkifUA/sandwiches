@@ -10,7 +10,7 @@ class Period < ApplicationRecord
   validates_with OrderPeriodDate
   validates_with MaximumFinishDate
 
-  scope :period_id_before, -> (id) { select(:id).where('id < ?', id.to_i).limit(1).first.id }
+  scope :period_before, -> (id) { where('id < ?', id.to_i).order(id: :desc).limit(1).first }
 
   def name
     "#{start_date.strftime("%d/%m/%Y")} - #{finish_date.strftime("%d/%m/%Y")}"

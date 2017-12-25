@@ -12,7 +12,9 @@ module ValidatorPeriods
   class MaximumFinishDate < ActiveModel::Validator
     def validate(record)
       return true if Period.count.zero?
-      unless Period.maximum(:finish_date) < record.start_date
+
+      last_max_date = record.id ? Period.period_before(record.id).finish_date : Period.maximum(:finish_date)
+      unless  last_max_date < record.start_date
         record.errors[:start_date] << I18n.t('periods.msg.invalid.start_date')
       end
     end
