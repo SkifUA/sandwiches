@@ -4,7 +4,8 @@ module CalculatorStocks
   def get_order_products
     @orders = Order.for_user_by_period(params.fetch(:user_id), params.fetch(:period_id))
     @user_name = User.find(params.fetch(:user_id)).name
-    @remainders = Remainder.for_the_period(params.fetch(:user_id), params.fetch(:period_id)).currents_true
+    period_before = Period.period_before(params.fetch(:period_id)) || 0
+    @remainders = Remainder.for_the_period(params.fetch(:user_id), period_before).currents_true
     @products = products_with_remainders(@orders, @remainders)
   end
 
