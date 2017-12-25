@@ -12,7 +12,7 @@
 
     <div class="form-group">
       <%= form.label t('orders.tab.dish') %>
-      <%= form.collection_select(:dish_id, Dish.all, :id, :name,
+      <%= form.collection_select(:dish_id, Dish.all.order(name: :asc), :id, :name,
                                  {
                                      include_blank: true
                                  },

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :remainders
     resources :purchases
   end
-  resources :purchases
+
   resources :places
   resources :products
 
