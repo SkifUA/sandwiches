@@ -1,7 +1,12 @@
 <div class="container empty-container">
   <%= provide(:title, t('orders.name')) %>
   <h2><%= date_by_format(@period.start_date) %> - <%= date_by_format(@period.finish_date) %></h2>
-
+  <div class="container btn-container">
+    <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
+    <% if can?(:create, Order) %>
+      <%= render 'shared/link_default', { path: new_period_order_path(@period), title: t('orders.view.add') } %>
+    <% end %>
+  </div>
   <table class="table">
     <thead>
       <tr>

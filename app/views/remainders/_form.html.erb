@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <%= form.label t('remainders.tab.product') %>
-      <%= form.collection_select(:product_id, Product.all, :id, :name_with_unit,
+      <%= form.collection_select(:product_id, Product.all.order(:name), :id, :name_with_unit,
                                  { include_blank: true,
                                    id: :remainder_product },
                                  class: 'form-control')

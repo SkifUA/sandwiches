@@ -1,6 +1,12 @@
 <div class="container empty-container">
   <%= provide(:title, t('remainders.name')) %>
   <h3><%= t('remainders.tab.period') %>: <%= @period.name %></h3>
+  <div class="container btn-container">
+    <%= render 'shared/link_default', { path: periods_path, title: t('button.back') } %>
+    <% if can?(:create, Purchase) %>
+      <%= render 'shared/link_default', { path: new_period_remainder_path(@period), title: t('remainders.view.add') } %>
+    <% end %>
+  </div>
   <table class="table">
     <thead>
     <tr>

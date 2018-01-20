@@ -1,6 +1,10 @@
 <div class="container">
   <%= provide(:title, t('products.name')) %>
-
+  <div class="container btn-container">
+    <% if can?(:create, Product) %>
+      <%= render 'shared/link_default', { path: new_product_path, title: t('products.view.title_new') } %>
+    <% end %>
+  </div>
   <%= paginate @products %>
   <table class="table">
     <thead>
